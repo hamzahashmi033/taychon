@@ -50,7 +50,7 @@ export default function Home() {
             <Feat />
             <Intro2 />
             <Portfolio />
-            {/* <Team /> */}
+            {/* <Team /> */} 
             <Testimonials />
             <Clients />
             <Blog />

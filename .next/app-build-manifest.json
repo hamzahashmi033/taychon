@@ -16,6 +16,11 @@
       "static/chunks/main-app.js",
       "static/chunks/app/portfolio-grid/page.js"
     ],
+    "/page-contact/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/page-contact/page.js"
+    ],
     "/not-found": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
