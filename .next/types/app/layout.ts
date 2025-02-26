@@ -1,4 +1,4 @@
-// File: C:\Users\GIGABYTE\Downloads\webfolio-creative-portfolio-next-js-template-2024-08-08-09-33-10-utc\Main_Files\webfolio-nextjs\app\layout.js
+// File: C:\Users\ESHOP\Desktop\Projects\Taychon\taychon\app\layout.js
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
