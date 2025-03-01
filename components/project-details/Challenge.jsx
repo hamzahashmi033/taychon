@@ -1,37 +1,9 @@
-import React from 'react';
+import React from "react";
 
 function Challenge() {
   return (
     <section className="section-padding">
       <div className="container">
-        <div className="info mb-80 pb-20 bord-thin-bottom">
-          <div className="row">
-            <div className="col-md-6 col-lg-3">
-              <div className="item mb-30">
-                <span className="opacity-8 mb-5">Category :</span>
-                <h6>Development</h6>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-3">
-              <div className="item mb-30">
-                <span className="opacity-8 mb-5">Client :</span>
-                <h6>Envato</h6>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-3">
-              <div className="item mb-30">
-                <span className="opacity-8 mb-5">Start Date :</span>
-                <h6>7 August 2021</h6>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-3">
-              <div className="item">
-                <span className="opacity-8 mb-5">Designer :</span>
-                <h6>UiCamp</h6>
-              </div>
-            </div>
-          </div>
-        </div>
         <div className="row justify-content-center">
           <div className="col-lg-11">
             <div className="row">
