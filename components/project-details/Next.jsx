@@ -1,8 +1,9 @@
 'use client';
 import loadBackgroudImages from '@/common/loadBackgroudImages';
+
 import React, { useEffect } from 'react';
 
-function Next() {
+function Next({prevTitle, prevLink, nextTitle, nextLink, prevBanner, nextBanner}) {
   useEffect(() => {
     loadBackgroudImages();
   }, []);
@@ -13,16 +14,16 @@ function Next() {
           <div className="col-md-6 rest">
             <div
               className="text-left box bg-img"
-              data-background="/assets/imgs/works/3/1.jpg"
+              data-background={prevBanner}
             >
               <div className="cont d-flex align-items-center">
                 <div>
                   <span className="mr-30 fz-30 ti-arrow-left"></span>
                 </div>
                 <div>
-                  <h6 className="sub-title fz-16 mb-5">Prev Project</h6>
+                  <h6 className="sub-title fz-16 mb-5">{prevTitle}</h6>
                   <a href="/project-details" className="fz-40 fw-600 stroke">
-                    OPT Media Agency
+                    {prevLink}
                   </a>
                 </div>
               </div>
@@ -31,14 +32,14 @@ function Next() {
           <div className="col-md-6 rest">
             <div
               className="text-right d-flex box bg-img"
-              data-background="/assets/imgs/works/3/2.jpg"
+              data-background={nextBanner}
             >
               <div className="ml-auto">
                 <div className="cont d-flex align-items-center">
                   <div>
-                    <h6 className="sub-title fz-16 mb-5">Next Project</h6>
+                    <h6 className="sub-title fz-16 mb-5">{nextTitle}</h6>
                     <a href="/project-details" className="fz-40 fw-600 stroke">
-                      TH3 Web Design
+                      {nextLink}
                     </a>
                   </div>
                   <div>
