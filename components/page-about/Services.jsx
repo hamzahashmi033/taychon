@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 function Services() {
@@ -53,9 +54,9 @@ function Services() {
             <div className="col-lg-4">
               <div className="img fit-img">
                 <img src="/assets/imgs/serv-img/web.jpg" alt="" />
-                <a href="/page-services-details">
+                <Link href="/web-development">
                   <span className="ti-arrow-top-right"></span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -89,9 +90,9 @@ function Services() {
             <div className="col-lg-4">
               <div className="img fit-img">
                 <img src="/assets/imgs/serv-img/app.jpg" alt="" />
-                <a href="/page-services-details">
+                <Link href="/app-development">
                   <span className="ti-arrow-top-right"></span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -121,9 +122,9 @@ function Services() {
             <div className="col-lg-4">
               <div className="img fit-img">
                 <img src="/assets/imgs/serv-img/graphic.jpg" alt="" />
-                <a href="/page-services-details">
+                <Link href="/graphic-design">
                   <span className="ti-arrow-top-right"></span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -153,9 +154,9 @@ function Services() {
             <div className="col-lg-4">
               <div className="img fit-img">
                 <img src="/assets/imgs/serv-img/devops.jpg" alt="" />
-                <a href="/page-services-details">
+                <Link href="/devops-engineering">
                   <span className="ti-arrow-top-right"></span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -185,9 +186,9 @@ function Services() {
             <div className="col-lg-4">
               <div className="img fit-img">
                 <img src="/assets/imgs/serv-img/marketing.jpg" alt="" />
-                <a href="/page-services-details">
+                <Link href="/marketing">
                   <span className="ti-arrow-top-right"></span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -219,9 +220,9 @@ function Services() {
             <div className="col-lg-4">
               <div className="img fit-img">
                 <img src="/assets/imgs/serv-img/ai.jpg" alt="" />
-                <a href="/page-services-details">
+                <Link href="/artificial-intelligence">
                   <span className="ti-arrow-top-right"></span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -251,9 +252,9 @@ function Services() {
             <div className="col-lg-4">
               <div className="img fit-img">
                 <img src="/assets/imgs/serv-img/uiux.jpg" alt="" />
-                <a href="/page-services-details">
+                <Link href="/uiux-design">
                   <span className="ti-arrow-top-right"></span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -283,9 +284,9 @@ function Services() {
             <div className="col-lg-4">
               <div className="img fit-img">
                 <img src="/assets/imgs/serv-img/webdesign.jpg" alt="" />
-                <a href="/page-services-details">
+                <Link href="/web-design">
                   <span className="ti-arrow-top-right"></span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

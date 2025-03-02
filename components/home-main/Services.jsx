@@ -3,6 +3,7 @@ import React from 'react';
 import data from '@/data/services';
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Link from 'next/link';
 function Services() {
   const swiperOptions = {
     modules: [Navigation],
@@ -74,14 +75,14 @@ function Services() {
                   </div>
                   <h5 className="mb-15">{item.title}</h5>
                   <p>{item.desc}</p>
-                  <a href={item.link} className="rmore mt-30">
+                  <Link href={item.link} className="rmore mt-30">
                     <span className="sub-title">Read More</span>
                     <img
                       src="/assets/imgs/arrow-right.png"
                       alt=""
                       className="icon-img-20 ml-5"
                     />
-                  </a>
+                  </Link>
                 </div>
               </SwiperSlide>
             ))}

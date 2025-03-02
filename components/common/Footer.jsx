@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 function Footer() {
@@ -17,14 +18,14 @@ function Footer() {
             <div className="column md-mb50 ">
               {/* <h6 className="sub-title mb-30">Contact</h6> */}
               <h6 className="p-color fw-300 ">
-                5919 Trussville Crossings <br /> Pkwy, Birmingham
+                950 Tower Ln, Foster City, <br /> CA, 94404
               </h6>
               <h6 className="mt-30 mb-15">
-                <a href="#0">info@taychon.com</a>
+                <Link href="#0">info@taychon.com</Link>
               </h6>
-              <a href="#0" className="">
+              <Link href="#0" className="">
                 <span className="fz-22 main-color">+2 456 (343) 24 45</span>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="col-lg-2 ">
@@ -32,25 +33,25 @@ function Footer() {
               <h6 className="sub-title mb-30">Useful Links</h6>
               <ul className="rest fz-14 opacity-7">
                 <li className="mb-15">
-                  <a href="/page-about">About Us</a>
+                  <Link href="/page-about">About Us</Link>
                 </li>
                 <li className="mb-15">
-                  <a href="/page-services">Services</a>
+                  <Link href="/page-services">Services</Link>
                 </li>
                 <li className="mb-15">
-                  <a href="/blog-grid-sidebar">Portfolio</a>
+                  <Link href="/blog-grid-sidebar">Portfolio</Link>
                 </li>
                 <li className="mb-15">
-                  <a href="/blog-grid-sidebar">Blogs</a>
+                  <Link href="/blog-grid-sidebar">Blogs</Link>
                 </li>
                 <li className="mb-15">
-                  <a href="/page-contact">Contact</a>
+                  <Link href="/page-contact">Contact</Link>
                 </li>
                 <li className="mb-15">
-                  <a href="/page-contact">Privacy Policy</a>
+                  <Link href="/page-contact">Privacy Policy</Link>
                 </li>
                 <li className="mb-15">
-                  <a href="/page-contact">Terms & Conditions</a>
+                  <Link href="/page-contact">Terms & Conditions</Link>
                 </li>
               </ul>
             </div>
@@ -60,25 +61,27 @@ function Footer() {
               <h6 className="sub-title mb-30">Our Services</h6>
               <ul className="rest fz-14 opacity-7">
                 <li className="mb-15">
-                  <a href="/page-about">Web Development</a>
+                  <Link href="/web-development">Web Development</Link>
                 </li>
                 <li className="mb-15">
-                  <a href="/page-services">App Development</a>
+                  <Link href="/app-development">App Development</Link>
                 </li>
                 <li className="mb-15">
-                  <a href="/blog-grid-sidebar">Graphic Design</a>
+                  <Link href="/graphic-design">Graphic Design</Link>
                 </li>
                 <li className="mb-15">
-                  <a href="/page-contact">Marketing</a>
+                  <Link href="/marketing">Marketing</Link>
                 </li>
                 <li className="mb-15">
-                  <a href="/page-contact">Ui/Ux Design</a>
+                  <Link href="/uiux-design">UI/UX Design</Link>
                 </li>
                 <li className="mb-15">
-                  <a href="/page-contact">DevOps</a>
+                  <Link href="/devops-engineering">DevOps Engineering</Link>
                 </li>
                 <li className="mb-15">
-                  <a href="/page-contact">Artificial Intelligence</a>
+                  <Link href="/artificial-intelligence">
+                    Artificial Intelligence
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -94,24 +97,24 @@ function Footer() {
               </div>
               <ul className="rest social-icon d-flex align-items-center">
                 <li className="hover-this cursor-pointer">
-                  <a href="#0" className="hover-anim">
+                  <Link href="#0" className="hover-anim">
                     <i className="fab fa-facebook-f"></i>
-                  </a>
+                  </Link>
                 </li>
                 <li className="hover-this cursor-pointer ml-10">
-                  <a href="#0" className="hover-anim">
+                  <Link href="#0" className="hover-anim">
                     <i className="fab fa-dribbble"></i>
-                  </a>
+                  </Link>
                 </li>
                 <li className="hover-this cursor-pointer ml-10">
-                  <a href="#0" className="hover-anim">
+                  <Link href="#0" className="hover-anim">
                     <i className="fab fa-linkedin-in"></i>
-                  </a>
+                  </Link>
                 </li>
                 <li className="hover-this cursor-pointer ml-10">
-                  <a href="#0" className="hover-anim">
+                  <Link href="#0" className="hover-anim">
                     <i className="fab fa-instagram"></i>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -119,9 +122,7 @@ function Footer() {
         </div>
         <div className="pt-30 pb-30 mt-80 bord-thin-top">
           <div className="text-center">
-            <p className="fz-14">
-              Copyright ©2025 Taychon{" "}
-            </p>
+            <p className="fz-14">Copyright ©2025 Taychon </p>
           </div>
         </div>
       </div>

@@ -12,7 +12,9 @@ function Solution({title,description}) {
               </div>
               <div className="col-lg-7">
                 <div className="text">
-                  <h5 className="mb-30 fw-400 line-height-40">{description}</h5>
+                  <h5 className="mb-30 fw-400 line-height-40">
+                   {description}
+                  </h5>
                 </div>
               </div>
             </div>

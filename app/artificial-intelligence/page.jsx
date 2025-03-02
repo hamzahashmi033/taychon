@@ -17,7 +17,7 @@ import Intro2 from "@/components/home-digital-agency/Intro2";
 import Testimonials from "@/components/home-creative-agency/Testimonials";
 import Marq2 from "@/components/common/Marq2";
 export const metadata = {
-  title: "Web Developemnt",
+  title: "Artificial Intelligence",
   icons: {
     icon: "/assets/imgs/logo/logo.ico",
     shortcut: "/assets/imgs/favicon.ico",
@@ -42,7 +42,7 @@ const page = () => {
           <main className="main-bg o-hidden">
             <Header
               banner={"/assets/imgs/works/ai/aiBanner.jpg"}
-              title={"Artificial Intelligence"}
+              title={"ARTIFICIAL INTELLIGENCE"}
             />
             <Challenge
               title={"Artificial Intelligence Services"}
@@ -51,7 +51,7 @@ const page = () => {
               }
             />
             <Works
-              banner={"/assets/imgs/works/ai/AI1.jpg"}
+              banner1={"/assets/imgs/works/ai/AI1.jpg"}
               banner2={"/assets/imgs/works/ai/AI2.jpg"}
             />
             <Solution
@@ -64,19 +64,19 @@ const page = () => {
             />
             <Wroks2 banner={"/assets/imgs/works/ai/AI3.jpg"} />
             <Challenge
-              title={"Natural Language Processing (NLP) for Enhanced Communication"}
+              title={
+                "Natural Language Processing (NLP) for Enhanced Communication"
+              }
               description={
                 "Take advantage of NLP to improve customer interactions, automate answers and analyze text data. Our AI -oriented solutions allow perfect communication, feel analysis and chatbot development, ensuring precise and efficient involvement on various platforms. Improve your business with smart language processing today!"
               }
             />
             <Works
-              banner={"/assets/imgs/works/ai/AI4.jpg"}
+              banner1={"/assets/imgs/works/ai/AI4.jpg"}
               banner2={"/assets/imgs/works/ai/AI5.jpg"}
             />
             <Solution
-              title={
-                "AI-Powered Automation to Optimize Business Operations"
-              }
+              title={"AI-Powered Automation to Optimize Business Operations"}
               description={
                 "Optimize workflows, reduce manual effort and increase efficiency with AI automation. From predictive analysis to intelligent process automation, our AI solutions help companies reduce costs, improve accuracy and boost productivity for sustainable growth. Transform operations with intelligent automation today!"
               }
@@ -89,7 +89,7 @@ const page = () => {
               }
             />
             <Works
-              banner={"/assets/imgs/works/ai/AI7.jpg"}
+              banner1={"/assets/imgs/works/ai/AI7.jpg"}
               banner2={"/assets/imgs/works/ai/AI8.jpg"}
             />
             <Solution
@@ -104,7 +104,16 @@ const page = () => {
             <Intro2 />
             <Testimonials />
             <Marq2 />
-            <Next />
+            <Next
+              prevSubTitle={"DEPLOYMENT"}
+              prevTitle={"DEVOPS ENGINEETING"}
+              prevLink={"/devops-engineering"}
+              prevBanner={"/assets/imgs/works/devops/devopsBanner.jpg"}
+              nextSubTitle={"DESIGN"}
+              nextTitle={"UI/UX DESIGN"}
+              nextLink={"/uiux-design"}
+              nextBanner={"/assets/imgs/works/UiUx/uiUxBanner.jpg"}
+            />
           </main>
           <Footer />
         </div>
