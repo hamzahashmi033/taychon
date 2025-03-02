@@ -11,10 +11,10 @@ import Header from '@/components/p-grid/Header';
 import Portfolio from '@/components/p-grid/Portfolio';
 
 export const metadata = {
-  title: 'webfolio',
+  title: 'Portfolio',
   icons: {
-    icon: '/assets/imgs/favicon.ico',
-    shortcut: '/assets/imgs/favicon.ico',
+    icon: "/assets/imgs/logo/logo.ico",
+    shortcut: "/assets/imgs/favicon.ico",
     other: generateStylesheetObject([
       '/assets/css/plugins.css',
       '/assets/css/style.css',

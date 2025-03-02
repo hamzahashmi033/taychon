@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 function Error() {
@@ -10,12 +11,12 @@ function Error() {
         <div className="text-center">
           <h1>404</h1>
           <p>The page you are looking for doesn’t exist</p>
-          <a
-            href="/home-main"
+          <Link
+            href="/"
             className="butn butn-md butn-bg main-colorbg radius-30 mt-30"
           >
             <span className="text">Back to Home</span>
-          </a>
+          </Link>
         </div>
       </div>
       <div className="marq">

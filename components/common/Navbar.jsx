@@ -120,44 +120,44 @@ function Navbar() {
               </Link>
               <ul className="dropdown-menu">
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <Link className="dropdown-item" href="/web-development">
                     Web Development
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <Link className="dropdown-item" href="/app-development">
                     App Development
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <Link className="dropdown-item" href="/marketing">
                     Marketing
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <Link className="dropdown-item" href="/graphic-design">
                     Graphic Design
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <Link className="dropdown-item" href="/devops-engineering">
                     DevOps Enginnering
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <Link className="dropdown-item" href="/artificial-intelligence">
                     Artificial Intelligence
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <Link className="dropdown-item" href="/uiux-design">
                     UI/UX Design
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <Link className="dropdown-item" href="/web-design">
                     Web Design
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </li>
@@ -166,7 +166,7 @@ function Navbar() {
               // onMouseMove={handleDropdownMouseMove}
               className="nav-item dropdown"
             >
-              <a
+              <Link
                 className="nav-link "
                 // data-toggle="dropdown"
                 href="/portfolio-grid"
@@ -175,7 +175,7 @@ function Navbar() {
                 aria-expanded="false"
               >
                 <span className="rolling-text">Portfolio</span>
-              </a>
+              </Link>
             </li>
             <li
               // onMouseLeave={handleDropdownMouseLeave}
@@ -213,12 +213,12 @@ function Navbar() {
         </div>
 
         <div className="contact-button">
-          <a
+          <Link
             href="/page-contact"
             className="butn butn-sm butn-bg main-colorbg radius-5"
           >
             <span className="text">Let&apos;s contact</span>
-          </a>
+          </Link>
         </div>
       </div>
     </nav>

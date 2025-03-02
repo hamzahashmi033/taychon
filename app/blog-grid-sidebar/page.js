@@ -9,10 +9,10 @@ import Script from 'next/script';
 import Header from '@/components/blog-grid-sidebar/Header';
 import Blogs from '@/components/blog-grid-sidebar/Blogs';
 export const metadata = {
-  title: 'webfolio',
+  title: 'All Blogs of Taychon',
   icons: {
-    icon: '/assets/imgs/favicon.ico',
-    shortcut: '/assets/imgs/favicon.ico',
+    icon: "/assets/imgs/logo/logo.ico",
+    shortcut: "/assets/imgs/favicon.ico",
     other: generateStylesheetObject([
       '/assets/css/plugins.css',
       '/assets/css/style.css',

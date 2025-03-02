@@ -11,9 +11,9 @@ import Contact from '@/components/page-contact/Contact';
 import Map from '@/components/page-contact/Map';
 
 export const metadata = {
-  title: 'webfolio',
+  title: 'Contact Us',
   icons: {
-    icon: '/assets/imgs/favicon.ico',
+    icon: '/assets/imgs/logo/logo.ico',
     shortcut: '/assets/imgs/favicon.ico',
     other: generateStylesheetObject([
       '/assets/css/plugins.css',
