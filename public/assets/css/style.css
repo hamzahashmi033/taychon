@@ -1808,7 +1808,11 @@ img.left {
 
 .stroke {
   color: transparent;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7);
+  -webkit-text-stroke: 2px rgba(0, 0, 0, 0.9);
+}
+.stroke1{
+  color: Black;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.8);
 }
 
 .fit-img {
