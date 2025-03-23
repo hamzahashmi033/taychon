@@ -8,7 +8,7 @@ function Challenge({title, description}) {
           <div className="col-lg-11">
             <div className="row">
               <div className="col-lg-5">
-                <h4 className="mb-50 text-black">{title}</h4>
+              <h4 className="mb-50 text-black">{title}</h4>
               </div>
               <div className="col-lg-7">
                 <div className="text">

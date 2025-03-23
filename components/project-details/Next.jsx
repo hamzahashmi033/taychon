@@ -29,7 +29,7 @@ function Next({
                 </div>
                 <div>
                   <h6 className="sub-title fz-16 mb-5">{prevSubTitle}</h6>
-                  <Link href={prevLink} className="fz-40 fw-600 stroke1">
+  <Link href={prevLink} className="fz-40 fw-600 stroke1">
                     {prevTitle}
                   </Link>
                 </div>
@@ -45,7 +45,7 @@ function Next({
                 <div className="cont d-flex align-items-center">
                   <div>
                     <h6 className="sub-title fz-16 mb-5">{nextSubTitle}</h6>
-                    <Link href={nextLink} className="fz-40 fw-600 stroke1">
+<Link href={nextLink} className="fz-40 fw-600 stroke1">
                       {nextTitle}
                     </Link>
                   </div>
