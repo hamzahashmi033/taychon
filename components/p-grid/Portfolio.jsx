@@ -1,22 +1,64 @@
-'use client';
-import initIsotope from '@/common/initIsotope';
-import React, { useEffect, useLayoutEffect } from 'react';
+"use client";
+import initIsotope from "@/common/initIsotope";
+import React, { useEffect, useLayoutEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 function Portfolio() {
+  useGSAP(() => {
+    // Create a GSAP timeline
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".trigger-portfolio-head",
+        start: "top 80%",
+        end: "bottom bottom",
+        toggleActions: "play none none none",
+        scrub: 3,
+      },
+    });
+
+    // Add animations to the timeline
+    // Add animations to the timeline
+    tl.from([".portfolio-head", ".filtering"], {
+      y: 400,
+      opacity: 0,
+      duration: 0.9,
+      stagger: 0, // No stagger, both animate at the same time
+    }).from(
+      ".portfolio-main",
+      {
+        y: 800,
+        opacity: 0,
+        duration: 0.9,
+      },
+      "+=0.5"
+    ); // Add a slight delay before animating portfolio-main
+  }, []);
   useEffect(() => {
     initIsotope();
   }, []);
   return (
     <section className="work-grid section-padding pb-0">
-      <div className="container">
-        <div className="row mb-80">
-          <div className="col-lg-4">
-            <div className="sec-head">
+      <div className="container-fluid">
+        <div className="row mb-80 trigger-portfolio-head">
+          <div className="col-lg-4 portfolio-head">
+            {/* <div className="sec-head">
               <h6 className="sub-title main-color mb-10">DISCOVER OUR CASES</h6>
-              <h3>Latest Projects</h3>
+              <h3 className="text-black">Latest Projects</h3>
+            </div> */}
+            <div>
+              <span className="sub-title subtitle main-color mb-5 text-bold">
+                DISCOVER OUR CASES
+              </span>
+              <h3 className="fw-600 fz-50 text-u d-rotate wow">
+                <span className="rotate-text color-black">
+                  Latest <span className="fw-200">Projects</span>
+                </span>
+              </h3>
             </div>
           </div>
-          <div className="filtering col-lg-8 d-flex justify-content-end align-items-end">
+          <div className="filtering col-lg-12 d-flex justify-content-end align-items-end">
             <div>
               <div className="filter">
                 <span data-filter="*" className="active" data-count="30">
@@ -35,18 +77,118 @@ function Portfolio() {
             </div>
           </div>
         </div>
+        
       </div>
-      <div className="container">
-        <div className="gallery row md-marg">
+
+      <div className="container-fluid">
+        <div className="gallery portfolio-main row md-marg">
           <div className="col-lg-4 col-md-6 items development">
-            <div className="item mb-50">
+            {/* <div className="item mb-50" > 
               <div className="img">
                 <img src="/assets/imgs/portfolio/Auto Mov.png" alt="" />
               </div>
               <div className="cont d-flex align-items-end mt-30">
                 <div>
-                  <span className="p-color mb-5 sub-title">Web Development</span>
-                  <h6>Auto Mov</h6>
+                  <span className="p-color mb-5 sub-title">
+                    Web Development
+                  </span>
+                  <h6 className="text-black">Auto Mov</h6>
+                </div>
+                <div className="ml-auto">
+                  <a href="/portfolio-grid">
+                    <span className="ti-arrow-top-right"></span>
+                  </a>
+                </div>
+              </div>
+            </div> */}
+            <figure className="mb-50">
+              <img src="/assets/imgs/portfolio/Auto Mov.png" alt="Mountains" />
+              <figcaption>
+                <div>
+                  <span className="p-color mb-5 sub-title">
+                    Web Development
+                  </span>
+                  <h6 className="text-black fontIncreaser">Auto Mov</h6>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+          <div className="col-lg-4 col-md-6 items development">
+            {/* <div className="item mb-50">
+              <div className="img">
+                <img src="/assets/imgs/portfolio/BIXOS.png" alt="" />
+              </div>
+              <div className="cont d-flex align-items-end mt-30">
+                <div>
+                  <span className="p-color mb-5 sub-title">
+                    Web Development
+                  </span>
+                  <h6 className="text-black">Bixos</h6>
+                </div>
+                <div className="ml-auto">
+                  <a href="/portfolio-grid">
+                    <span className="ti-arrow-top-right"></span>
+                  </a>
+                </div>
+              </div>
+            </div> */}
+            <figure className="mb-50">
+              <img src="/assets/imgs/portfolio/BIXOS.png" alt="Mountains" />
+              <figcaption>
+                <div>
+                  <span className="p-color mb-5 sub-title">
+                    Web Development
+                  </span>
+                  <h6 className="text-black fontIncreaser">Bixos</h6>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+          <div className="col-lg-4 col-md-6 items development">
+            {/* <div className="item mb-50">
+              <div className="img">
+                <img src="/assets/imgs/portfolio/Grain Grower.png" alt="" />
+              </div>
+              <div className="cont d-flex align-items-end mt-30">
+                <div>
+                  <span className="p-color mb-5 sub-title">
+                    Web Development
+                  </span>
+                  <h6 className="text-black">Grain Grower</h6>
+                </div>
+                <div className="ml-auto">
+                  <a href="/portfolio-grid">
+                    <span className="ti-arrow-top-right"></span>
+                  </a>
+                </div>
+              </div>
+            </div> */}
+            <figure className="mb-50">
+              <img
+                src="/assets/imgs/portfolio/Grain Grower.png"
+                alt="Mountains"
+              />
+              <figcaption>
+                <div>
+                  <span className="p-color mb-5 sub-title">
+                    Web Development
+                  </span>
+                  <h6 className="text-black fontIncreaser">Grain Grower</h6>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+          <div className="col-lg-4 col-md-6 items development">
+            <div className="item mb-50">
+              <div className="img">
+                <img src="/assets/imgs/portfolio/Medikor.png" alt="" />
+              </div>
+              <div className="cont d-flex align-items-end mt-30">
+                <div>
+                  <span className="p-color mb-5 sub-title">
+                    Web Development
+                  </span>
+                  <h6 className="text-black">Medikor</h6>
                 </div>
                 <div className="ml-auto">
                   <a href="/portfolio-grid">
@@ -59,70 +201,18 @@ function Portfolio() {
           <div className="col-lg-4 col-md-6 items development">
             <div className="item mb-50">
               <div className="img">
-                <img src="/assets/imgs/portfolio/BIXOS.png" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">Web Development</span>
-                  <h6>Bixos</h6>
-                </div>
-                <div className="ml-auto">
-                <a href="/portfolio-grid">
-                <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 items development">
-            <div className="item mb-50">
-              <div className="img">
-                <img src="/assets/imgs/portfolio/Grain Grower.png" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">Web Development</span>
-                  <h6>Grain Grower</h6>
-                </div>
-                <div className="ml-auto">
-                <a href="/portfolio-grid">
-                <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 items development">
-            <div className="item mb-50">
-              <div className="img">
-                <img src="/assets/imgs/portfolio/Medikor.png" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">Web Development</span>
-                  <h6>Medikor</h6>
-                </div>
-                <div className="ml-auto">
-                <a href="/portfolio-grid">
-                <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 items development">
-            <div className="item mb-50">
-              <div className="img">
                 <img src="/assets/imgs/portfolio/MODHU.png" alt="" />
               </div>
               <div className="cont d-flex align-items-end mt-30">
                 <div>
-                  <span className="p-color mb-5 sub-title">Web Development</span>
-                  <h6>Modhu</h6>
+                  <span className="p-color mb-5 sub-title">
+                    Web Development
+                  </span>
+                  <h6 className="text-black">Modhu</h6>
                 </div>
                 <div className="ml-auto">
-                <a href="/portfolio-grid">
-                <span className="ti-arrow-top-right"></span>
+                  <a href="/portfolio-grid">
+                    <span className="ti-arrow-top-right"></span>
                   </a>
                 </div>
               </div>
@@ -135,12 +225,14 @@ function Portfolio() {
               </div>
               <div className="cont d-flex align-items-end mt-30">
                 <div>
-                  <span className="p-color mb-5 sub-title">Web Development</span>
-                  <h6>Ocle</h6>
+                  <span className="p-color mb-5 sub-title">
+                    Web Development
+                  </span>
+                  <h6 className="text-black">Ocle</h6>
                 </div>
                 <div className="ml-auto">
-                <a href="/portfolio-grid">
-                <span className="ti-arrow-top-right"></span>
+                  <a href="/portfolio-grid">
+                    <span className="ti-arrow-top-right"></span>
                   </a>
                 </div>
               </div>
@@ -153,12 +245,14 @@ function Portfolio() {
               </div>
               <div className="cont d-flex align-items-end mt-30">
                 <div>
-                  <span className="p-color mb-5 sub-title">Web Development</span>
-                  <h6>Red Business</h6>
+                  <span className="p-color mb-5 sub-title">
+                    Web Development
+                  </span>
+                  <h6 className="text-black">Red Business</h6>
                 </div>
                 <div className="ml-auto">
-                <a href="/portfolio-grid">
-                <span className="ti-arrow-top-right"></span>
+                  <a href="/portfolio-grid">
+                    <span className="ti-arrow-top-right"></span>
                   </a>
                 </div>
               </div>
@@ -171,12 +265,14 @@ function Portfolio() {
               </div>
               <div className="cont d-flex align-items-end mt-30">
                 <div>
-                  <span className="p-color mb-5 sub-title">Web Development</span>
-                  <h6>Sell Shop</h6>
+                  <span className="p-color mb-5 sub-title">
+                    Web Development
+                  </span>
+                  <h6 className="text-black">Sell Shop</h6>
                 </div>
                 <div className="ml-auto">
-                <a href="/portfolio-grid">
-                <span className="ti-arrow-top-right"></span>
+                  <a href="/portfolio-grid">
+                    <span className="ti-arrow-top-right"></span>
                   </a>
                 </div>
               </div>
@@ -189,12 +285,14 @@ function Portfolio() {
               </div>
               <div className="cont d-flex align-items-end mt-30">
                 <div>
-                  <span className="p-color mb-5 sub-title">Web Development</span>
-                  <h6>Softo</h6>
+                  <span className="p-color mb-5 sub-title">
+                    Web Development
+                  </span>
+                  <h6 className="text-black">Softo</h6>
                 </div>
                 <div className="ml-auto">
-                <a href="/portfolio-grid">
-                <span className="ti-arrow-top-right"></span>
+                  <a href="/portfolio-grid">
+                    <span className="ti-arrow-top-right"></span>
                   </a>
                 </div>
               </div>
@@ -207,12 +305,14 @@ function Portfolio() {
               </div>
               <div className="cont d-flex align-items-end mt-30">
                 <div>
-                  <span className="p-color mb-5 sub-title">Web Development</span>
-                  <h6>Vitour</h6>
+                  <span className="p-color mb-5 sub-title">
+                    Web Development
+                  </span>
+                  <h6 className="text-black">Vitour</h6>
                 </div>
                 <div className="ml-auto">
-                <a href="/portfolio-grid">
-                <span className="ti-arrow-top-right"></span>
+                  <a href="/portfolio-grid">
+                    <span className="ti-arrow-top-right"></span>
                   </a>
                 </div>
               </div>
@@ -225,12 +325,14 @@ function Portfolio() {
               </div>
               <div className="cont d-flex align-items-end mt-30">
                 <div>
-                  <span className="p-color mb-5 sub-title">Web Development</span>
-                  <h6>Web Tech</h6>
+                  <span className="p-color mb-5 sub-title">
+                    Web Development
+                  </span>
+                  <h6 className="text-black">Web Tech</h6>
                 </div>
                 <div className="ml-auto">
-                <a href="/portfolio-grid">
-                <span className="ti-arrow-top-right"></span>
+                  <a href="/portfolio-grid">
+                    <span className="ti-arrow-top-right"></span>
                   </a>
                 </div>
               </div>
@@ -243,12 +345,14 @@ function Portfolio() {
               </div>
               <div className="cont d-flex align-items-end mt-30">
                 <div>
-                  <span className="p-color mb-5 sub-title">Web Development</span>
-                  <h6>Wia Tech</h6>
+                  <span className="p-color mb-5 sub-title">
+                    Web Development
+                  </span>
+                  <h6 className="text-black">Wia Tech</h6>
                 </div>
                 <div className="ml-auto">
-                <a href="/portfolio-grid">
-                <span className="ti-arrow-top-right"></span>
+                  <a href="/portfolio-grid">
+                    <span className="ti-arrow-top-right"></span>
                   </a>
                 </div>
               </div>
@@ -262,11 +366,11 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Graphic Design</span>
-                  <h6>Card Design</h6>
+                  <h6 className="text-black">Card Design</h6>
                 </div>
                 <div className="ml-auto">
-                <a href="/portfolio-grid">
-                <span className="ti-arrow-top-right"></span>
+                  <a href="/portfolio-grid">
+                    <span className="ti-arrow-top-right"></span>
                   </a>
                 </div>
               </div>
@@ -280,11 +384,11 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Graphic Design</span>
-                  <h6>Card Design</h6>
+                  <h6 className="text-black">Card Design</h6>
                 </div>
                 <div className="ml-auto">
-                <a href="/portfolio-grid">
-                <span className="ti-arrow-top-right"></span>
+                  <a href="/portfolio-grid">
+                    <span className="ti-arrow-top-right"></span>
                   </a>
                 </div>
               </div>
@@ -298,11 +402,11 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Graphic Design</span>
-                  <h6>Logo Design</h6>
+                  <h6 className="text-black">Logo Design</h6>
                 </div>
                 <div className="ml-auto">
-                <a href="/portfolio-grid">
-                <span className="ti-arrow-top-right"></span>
+                  <a href="/portfolio-grid">
+                    <span className="ti-arrow-top-right"></span>
                   </a>
                 </div>
               </div>
@@ -316,11 +420,11 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Graphic Design</span>
-                  <h6>Logo Design</h6>
+                  <h6 className="text-black">Logo Design</h6>
                 </div>
                 <div className="ml-auto">
-                <a href="/portfolio-grid">
-                <span className="ti-arrow-top-right"></span>
+                  <a href="/portfolio-grid">
+                    <span className="ti-arrow-top-right"></span>
                   </a>
                 </div>
               </div>
@@ -334,17 +438,17 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Graphic Design</span>
-                  <h6>Card Design</h6>
+                  <h6 className="text-black">Card Design</h6>
                 </div>
                 <div className="ml-auto">
-                <a href="/portfolio-grid">
-                <span className="ti-arrow-top-right"></span>
+                  <a href="/portfolio-grid">
+                    <span className="ti-arrow-top-right"></span>
                   </a>
                 </div>
               </div>
             </div>
           </div>
-           <div className="col-lg-4 col-md-6 items design">
+          <div className="col-lg-4 col-md-6 items design">
             <div className="item mb-50">
               <div className="img">
                 <img src="/assets/imgs/graphic/img6.webp" alt="" />
@@ -352,11 +456,11 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Graphic Design</span>
-                  <h6>Card Design</h6>
+                  <h6 className="text-black">Card Design</h6>
                 </div>
                 <div className="ml-auto">
-                <a href="/portfolio-grid">
-                <span className="ti-arrow-top-right"></span>
+                  <a href="/portfolio-grid">
+                    <span className="ti-arrow-top-right"></span>
                   </a>
                 </div>
               </div>
@@ -370,11 +474,11 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Graphic Design</span>
-                  <h6>Card Design</h6>
+                  <h6 className="text-black">Card Design</h6>
                 </div>
                 <div className="ml-auto">
-                <a href="/portfolio-grid">
-                <span className="ti-arrow-top-right"></span>
+                  <a href="/portfolio-grid">
+                    <span className="ti-arrow-top-right"></span>
                   </a>
                 </div>
               </div>
@@ -388,11 +492,11 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Graphic Design</span>
-                  <h6>Logo Design</h6>
+                  <h6 className="text-black">Logo Design</h6>
                 </div>
                 <div className="ml-auto">
-                <a href="/portfolio-grid">
-                <span className="ti-arrow-top-right"></span>
+                  <a href="/portfolio-grid">
+                    <span className="ti-arrow-top-right"></span>
                   </a>
                 </div>
               </div>
@@ -406,11 +510,11 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Graphic Design</span>
-                  <h6>Card Design</h6>
+                  <h6 className="text-black">Card Design</h6>
                 </div>
                 <div className="ml-auto">
-                <a href="/portfolio-grid">
-                <span className="ti-arrow-top-right"></span>
+                  <a href="/portfolio-grid">
+                    <span className="ti-arrow-top-right"></span>
                   </a>
                 </div>
               </div>
@@ -424,11 +528,11 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Marketing</span>
-                  <h6>Modhu</h6>
+                  <h6 className="text-black">Modhu</h6>
                 </div>
                 <div className="ml-auto">
-                <a href="/portfolio-grid">
-                <span className="ti-arrow-top-right"></span>
+                  <a href="/portfolio-grid">
+                    <span className="ti-arrow-top-right"></span>
                   </a>
                 </div>
               </div>
@@ -442,11 +546,11 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Marketing</span>
-                  <h6>The Verge</h6>
+                  <h6 className="text-black">The Verge</h6>
                 </div>
                 <div className="ml-auto">
-                <a href="/portfolio-grid">
-                <span className="ti-arrow-top-right"></span>
+                  <a href="/portfolio-grid">
+                    <span className="ti-arrow-top-right"></span>
                   </a>
                 </div>
               </div>
@@ -460,11 +564,11 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Marketing</span>
-                  <h6>Ocle</h6>
+                  <h6 className="text-black">Ocle</h6>
                 </div>
                 <div className="ml-auto">
-                <a href="/portfolio-grid">
-                <span className="ti-arrow-top-right"></span>
+                  <a href="/portfolio-grid">
+                    <span className="ti-arrow-top-right"></span>
                   </a>
                 </div>
               </div>
@@ -478,11 +582,11 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Marketing</span>
-                  <h6>Red Business</h6>
+                  <h6 className="text-black">Red Business</h6>
                 </div>
                 <div className="ml-auto">
-                <a href="/portfolio-grid">
-                <span className="ti-arrow-top-right"></span>
+                  <a href="/portfolio-grid">
+                    <span className="ti-arrow-top-right"></span>
                   </a>
                 </div>
               </div>
@@ -496,11 +600,11 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Marketing</span>
-                  <h6>Sell Shop</h6>
+                  <h6 className="text-black">Sell Shop</h6>
                 </div>
                 <div className="ml-auto">
-                <a href="/portfolio-grid">
-                <span className="ti-arrow-top-right"></span>
+                  <a href="/portfolio-grid">
+                    <span className="ti-arrow-top-right"></span>
                   </a>
                 </div>
               </div>
@@ -514,11 +618,11 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Marketing</span>
-                  <h6>Softo</h6>
+                  <h6 className="text-black">Softo</h6>
                 </div>
                 <div className="ml-auto">
-                <a href="/portfolio-grid">
-                <span className="ti-arrow-top-right"></span>
+                  <a href="/portfolio-grid">
+                    <span className="ti-arrow-top-right"></span>
                   </a>
                 </div>
               </div>
@@ -532,11 +636,11 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Marketing</span>
-                  <h6>Grain Grower </h6>
+                  <h6 className="text-black">Grain Grower </h6>
                 </div>
                 <div className="ml-auto">
-                <a href="/portfolio-grid">
-                <span className="ti-arrow-top-right"></span>
+                  <a href="/portfolio-grid">
+                    <span className="ti-arrow-top-right"></span>
                   </a>
                 </div>
               </div>
@@ -550,11 +654,11 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Marketing</span>
-                  <h6>Bixos </h6>
+                  <h6 className="text-black">Bixos</h6>
                 </div>
                 <div className="ml-auto">
-                <a href="/portfolio-grid">
-                <span className="ti-arrow-top-right"></span>
+                  <a href="/portfolio-grid">
+                    <span className="ti-arrow-top-right"></span>
                   </a>
                 </div>
               </div>
@@ -568,17 +672,18 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Marketing</span>
-                  <h6>Auto Mov </h6>
+                  <h6 className="text-black">Auto Mov</h6>
                 </div>
                 <div className="ml-auto">
-                <a href="/portfolio-grid">
-                <span className="ti-arrow-top-right"></span>
+                  <a href="/portfolio-grid">
+                    <span className="ti-arrow-top-right"></span>
                   </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
+       
       </div>
     </section>
   );

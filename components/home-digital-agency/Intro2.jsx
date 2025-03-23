@@ -16,16 +16,11 @@ function Intro2() {
     <section className="intro-accord">
       <div className="container ontop">
         <div className="row xlg-marg">
-          {/* <div className="col-lg-6">
-            <div className="img md-mb50">
-              <img src="/assets/imgs/arw2.png" alt="" />
-            </div>
-          </div> */}
           <div className="col-lg-12 valign">
             <div style={{ width: "100%" }}>
               <div className="sec-head mb-50">
-                <h6 className="sub-title main-color mb-15">Why choose us?</h6>
-                <h3>
+                <h6 className="sub-title main-color mb-15 ">Why choose us?</h6>
+                <h3 className="text-red-600">
                   Our Process <br /> From Vision to Execution
                 </h3>
               </div>
