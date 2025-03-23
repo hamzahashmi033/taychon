@@ -8,11 +8,11 @@ function Solution({title,description}) {
           <div className="col-lg-11">
             <div className="row">
               <div className="col-lg-5">
-                <h4 className="mb-50">{title}</h4>
+                <h4 className="mb-50 text-black">{title}</h4>
               </div>
               <div className="col-lg-7">
                 <div className="text">
-                  <h5 className="mb-30 fw-400 line-height-40">
+                  <h5 className="mb-30 fw-400 line-height-40 text-black">
                    {description}
                   </h5>
                 </div>

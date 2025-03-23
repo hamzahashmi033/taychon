@@ -11,15 +11,15 @@ function Contact() {
                 <a href="#0">+2 456 (343) 24 45</a>
               </div>
               <div className="morinfo mt-50 pb-30 bord-thin-bottom">
-                <h6 className="mb-15">Address</h6>
-                <p>950 Tower Ln, Foster City, CA 94404</p>
+                <h6 className="mb-15 text-black">Address</h6>
+                <p className='text-black'>950 Tower Ln, Foster City, CA 94404</p>
               </div>
               <div className="morinfo mt-30 pb-30 bord-thin-bottom">
-                <h6 className="mb-15">Email</h6>
-                <p>info@taychon.com</p>
+                <h6 className="mb-15 text-black">Email</h6>
+                <p className='text-black'>info@taychon.com</p>
               </div>
 
-              <div className="social-icon mt-50">
+              <div className="social-icon mt-50 text-black">
                 <a href="#0">
                   <i className="fab fa-facebook-f"></i>
                 </a>
@@ -39,7 +39,7 @@ function Contact() {
             <div className="full-width">
               <div className="sec-head mb-50">
                 <h6 className="sub-title main-color mb-15">Let&lsquo;s Chat</h6>
-                <h3 className="text-u ls1">
+                <h3 className="text-u ls1 text-black">
                   Send a <span className="fw-200">message</span>
                 </h3>
               </div>
@@ -100,9 +100,9 @@ function Contact() {
                     <div className="mt-30">
                       <button
                         type="submit"
-                        className="butn butn-full butn-bord radius-30"
+                        className="butn butn-full butn-bord radius-30 main-colorbg"
                       >
-                        <span className="text">Let&lsquo;s Talk</span>
+                        <span className="text text-black">Let&lsquo;s Talk</span>
                       </button>
                     </div>
                   </div>
