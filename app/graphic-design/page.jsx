@@ -63,7 +63,7 @@ const page = () => {
             <Wroks2 banner={"/assets/imgs/graphic-design/img3.jpg"} />
 
             <Challenge
-              title={"social media graphics"}
+              title={"Social media graphics"}
               description={
                 "Increase your brand with attractive social media charts and high impact marketing materials. From engaging posts to professional banners, we project visuals that capture attention, increaseengagement, and raise their presence on -line. Let's create impressive graphics that highlight your brand!"
               }
