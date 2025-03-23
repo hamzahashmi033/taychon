@@ -22,12 +22,12 @@ function Blogs() {
                           <a href="/blog-grid-sidebar">August 14, 2023</a>
                         </div>
                       </div>
-                      <h4 className="fz-30">
+                      <h4 className="fz-30 text-black">
                         Design Inspiration: Where to Find Creative Ideas
                       </h4>
                       <a
                         href="/blog-details"
-                        className="butn-crev d-flex align-items-center mt-40"
+                        className="butn-crev d-flex align-items-center mt-40 text-black"
                       >
                         <span className="hover-this">
                           <span className="circle hover-anim">
@@ -53,12 +53,12 @@ function Blogs() {
                           <a href="/blog-grid-sidebar">August 14, 2023</a>
                         </div>
                       </div>
-                      <h4 className="fz-30">
+                      <h4 className="fz-30 text-black">
                         Typography: Choosing Fonts for Maximum Impact
                       </h4>
                       <a
                         href="/blog-details"
-                        className="butn-crev d-flex align-items-center mt-40"
+                        className="butn-crev d-flex align-items-center mt-40 text-black"
                       >
                         <span className="hover-this">
                           <span className="circle hover-anim">
@@ -84,12 +84,12 @@ function Blogs() {
                           <a href="/blog-grid-sidebar">August 14, 2023</a>
                         </div>
                       </div>
-                      <h4 className="fz-30">
+                      <h4 className="fz-30 text-black">
                         Design Inspiration: Where to Find Creative Ideas
                       </h4>
                       <a
                         href="/blog-details"
-                        className="butn-crev d-flex align-items-center mt-40"
+                        className="butn-crev d-flex align-items-center mt-40 text-black"
                       >
                         <span className="hover-this">
                           <span className="circle hover-anim">
@@ -115,12 +115,12 @@ function Blogs() {
                           <a href="/blog-grid-sidebar">August 14, 2023</a>
                         </div>
                       </div>
-                      <h4 className="fz-30">
+                      <h4 className="fz-30 text-black">
                         Typography: Choosing Fonts for Maximum Impact
                       </h4>
                       <a
                         href="/blog-details"
-                        className="butn-crev d-flex align-items-center mt-40"
+                        className="butn-crev d-flex align-items-center mt-40 text-black"
                       >
                         <span className="hover-this">
                           <span className="circle hover-anim">
@@ -146,12 +146,12 @@ function Blogs() {
                           <a href="/blog-grid-sidebar">August 14, 2023</a>
                         </div>
                       </div>
-                      <h4 className="fz-30">
+                      <h4 className="fz-30 text-black">
                         Design Inspiration: Where to Find Creative Ideas
                       </h4>
                       <a
                         href="/blog-details"
-                        className="butn-crev d-flex align-items-center mt-40"
+                        className="butn-crev d-flex align-items-center mt-40 text-black"
                       >
                         <span className="hover-this">
                           <span className="circle hover-anim">
@@ -177,12 +177,12 @@ function Blogs() {
                           <a href="/blog-grid-sidebar">August 14, 2023</a>
                         </div>
                       </div>
-                      <h4 className="fz-30">
+                      <h4 className="fz-30 text-black">
                         Typography: Choosing Fonts for Maximum Impact
                       </h4>
                       <a
                         href="/blog-details"
-                        className="butn-crev d-flex align-items-center mt-40"
+                        className="butn-crev d-flex align-items-center mt-40 text-black"
                       >
                         <span className="hover-this">
                           <span className="circle hover-anim">
@@ -200,13 +200,13 @@ function Blogs() {
           <div className="col-lg-4">
             <div className="sidebar">
               <div className="widget">
-                <h6 className="title-widget">Search Here</h6>
+                <h6 className="title-widget text-black">Search Here</h6>
                 <div className="search-box">
                   <input type="text" name="search-post" placeholder="Search" />
-                  <span className="icon pe-7s-search"></span>
+                  <span className="icon pe-7s-search text-black"></span>
                 </div>
               </div>
-              <div className="widget catogry">
+              <div className="widget catogry text-black">
                 <h6 className="title-widget">Categories</h6>
                 <ul className="rest">
                   <li>
@@ -241,7 +241,7 @@ function Blogs() {
                   </li>
                 </ul>
               </div>
-              <div className="widget last-post-thum">
+              <div className="widget last-post-thum text-black">
                 <h6 className="title-widget">latest Posts</h6>
                 <div className="item d-flex align-items-center">
                   <div>
@@ -262,7 +262,7 @@ function Blogs() {
                     </span>
                     <h6>
                       <a href="/blog-grid-sidebar">
-                        ways to quickly increase traffic to your website
+                        Ways to quickly increase traffic to your website
                       </a>
                     </h6>
                   </div>
@@ -286,7 +286,7 @@ function Blogs() {
                     </span>
                     <h6>
                       <a href="/blog-grid-sidebar">
-                        breaking the rules: using sqlite to demo web
+                        Breaking the rules: using sqlite to demo web
                       </a>
                     </h6>
                   </div>
@@ -310,13 +310,13 @@ function Blogs() {
                     </span>
                     <h6>
                       <a href="/blog-grid-sidebar">
-                        building better ui designs with layout grids
+                        Building better ui designs with layout grids
                       </a>
                     </h6>
                   </div>
                 </div>
               </div>
-              <div className="widget tags">
+              <div className="widget tags text-black">
                 <h6 className="title-widget">Tags</h6>
                 <div>
                   <a href="/blog-grid-sidebar">Creative</a>
