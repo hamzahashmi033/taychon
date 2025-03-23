@@ -1,22 +1,38 @@
-'use client';
-import loadBackgroudImages from '@/common/loadBackgroudImages';
-import React, { useEffect } from 'react';
-import { Navigation, Pagination } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-
+"use client";
+import loadBackgroudImages from "@/common/loadBackgroudImages";
+import React, { useEffect } from "react";
+import { Navigation, Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 function Testimonials() {
+  useGSAP(() => {
+    gsap.from(".testimonials-minim", {
+      y: 400,
+      opacity: 0,
+      duration: 0.9,
+      scrollTrigger: {
+        trigger: ".trigger-testimonial",
+        start: "top 90%",
+        end: "bottom bottom",
+        toggleActions: "play none none none",
+        scrub: 3,
+      },
+    });
+  }, []);
   const swiperOptions = {
     modules: [Pagination, Navigation],
     spaceBetween: 30,
     loop: true,
     pagination: {
-      el: '.testimonials-minim .swiper-pagination',
+      el: ".testimonials-minim .swiper-pagination",
       clickable: true,
     },
 
     navigation: {
-      nextEl: '.testimonials-minim .swiper-button-next',
-      prevEl: '.testimonials-minim .swiper-button-prev',
+      nextEl: ".testimonials-minim .swiper-button-next",
+      prevEl: ".testimonials-minim .swiper-button-prev",
     },
   };
   useEffect(() => {
@@ -30,7 +46,7 @@ function Testimonials() {
     >
       <div className="container ontop">
         <div className="row">
-          <div className="col-lg-4">
+          <div className="col-lg-4 trigger-testimonial">
             <div className="sec-head">
               <h6 className="sub-title main-color mb-15">Testimonials</h6>
               <h3 className="fw-600 d-rotate wow">

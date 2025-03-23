@@ -18,6 +18,10 @@ import Script from "next/script";
 import Marq from "@/components/home-main/Marq";
 import Intro2 from "@/components/home-digital-agency/Intro2";
 import Blog from "@/components/home-digital-agency/Blog";
+import PinSection from "@/components/process-pin";
+import "./globals.css";
+import HomeTwoSponsor from "@/components/Partners/Partners";
+import Marquee from "@/components/Marquee/Marquee";
 export const metadata = {
   title: "Taychon - Software and Creative Agency",
   icons: {
@@ -44,17 +48,18 @@ export default function Home() {
         <div id="smooth-content">
           <main className="main-bg o-hidden">
             <Header />
+            <HomeTwoSponsor />
             <Intro />
-            <Marq />
+            <Marquee title={"taychon services"}/>
             <Services />
             <Feat />
-            <Intro2 />
+            <PinSection />
+            <Marquee title={"taychon portfolio"}/>
             <Portfolio />
-            {/* <Team /> */} 
             <Testimonials />
             <Clients />
             <Blog />
-            <Marq2 />
+            {/* <Marq2 /> */}
           </main>
           <Footer />
         </div>
