@@ -1,23 +1,55 @@
 "use client";
 import loadBackgroudImages from "@/common/loadBackgroudImages";
 import React, { useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 function Feat() {
   useEffect(() => {
     loadBackgroudImages();
   }, []);
+  useGSAP(() => {
+    gsap.from(".cont", {
+      y: 300,
+      opacity: 0,
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: ".feat-cont",
+        start: "top 80%",
+        end: "bottom bottom",
+        toggleActions: "play none none none",
+        scrub: 2,
+    
+      },
+    });
+    gsap.from(gsap.utils.toArray(".serviceCard"), {
+      y: 100,
+      opacity: 0,
+      duration: 0.6,
+      stagger: 0.2, // Delay between each animation
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".feat-cont",
+        start: "top 80%",
+        end: "bottom bottom",
+        toggleActions: "play none none none",
+        scrub: 2,
+      },
+    });
+  });
   return (
     <section className="feat section-padding">
       <div className="container ontop">
-        <div className="row">
+        <div className="row feat-cont">
           <div className="col-lg-5">
             <div className="cont md-mb50">
-              <h6 className="sub-title main-color mb-15">Trusted Services</h6>
-              <h3 className="mb-30">
+              <h6 className="sub-title main-color mb-15 text-bold">Trusted Services</h6>
+              <h3 className="mb-30 color-black">
                 The service we offer is specifically designed to meet your
                 needs.
               </h3>
-              <p>
+              <p className="color-black">
                 Driven professional dedicated to making a lasting impact through
                 innovative solutions and unwavering excellence.
               </p>
@@ -35,7 +67,7 @@ function Feat() {
             </div>
           </div>
           <div className="col-lg-6 offset-lg-1">
-            <div className="item mb-30">
+            <div className="item serviceCard mb-30">
               <div className="row">
                 <div
                   className="col-md-4 bg-img"
@@ -54,7 +86,7 @@ function Feat() {
                 </div>
               </div>
             </div>
-            <div className="item mb-30">
+            <div className="item serviceCard mb-30">
               <div className="row">
                 <div
                   className="col-md-4 bg-img"
@@ -72,7 +104,7 @@ function Feat() {
                 </div>
               </div>
             </div>
-            <div className="item mb-30">
+            <div className="item serviceCard mb-30">
               <div className="row">
                 <div
                   className="col-md-4 bg-img"
@@ -90,7 +122,7 @@ function Feat() {
                 </div>
               </div>
             </div>
-            <div className="item ">
+            <div className="item serviceCard">
               <div className="row">
                 <div
                   className="col-md-4 bg-img"

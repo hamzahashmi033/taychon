@@ -23,7 +23,7 @@ function Clients() {
     },
   };
   return (
-    <section className="clients-carso section-padding pt-0">
+    <section className="bg-black ">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-6 col-md-10">
@@ -87,7 +87,7 @@ function Clients() {
         </div>
         <div className="sec-bottom mt-100">
           <div className="main-bg d-flex align-items-center">
-            <h6 className="fz-14 fw-400">
+            <h6 className="fz-14 fw-400 ">
               More than <span className="fw-600"> 200+ companies</span>
               trusted us worldwide
             </h6>
