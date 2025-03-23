@@ -20,7 +20,7 @@ function Marq() {
           <div className="box">
             {marquee.map((item, i) => (
               <div key={i} className="item">
-                <h4 className="d-flex align-items-center">
+                <h4 className="d-flex align-items-center color-black">
                   <span>{item}</span>
                   <span className="icon-img-50 ml-40">
                     <img src="/assets/imgs/star.png" alt="" />
@@ -32,8 +32,8 @@ function Marq() {
           <div className="box">
             {marquee.map((item, i) => (
               <div key={i} className="item">
-                <h4 className="d-flex align-items-center">
-                  <span>{item}</span>
+                <h4 className="d-flex align-items-center color-black">
+                  <span className="color-black">{item}</span>
                   <span className="icon-img-50 ml-40">
                     <img src="/assets/imgs/star.png" alt="" />
                   </span>
@@ -48,8 +48,8 @@ function Marq() {
           <div className="box">
             {marquee.map((item, i) => (
               <div key={i} className="item">
-                <h4 className="d-flex align-items-center">
-                  <span>{item}</span>
+                <h4 className="d-flex align-items-center color-black">
+                  <span className="color-black">{item}</span>
                   <span className="icon-img-50 ml-40">
                     <img src="/assets/imgs/star.png" alt="" />
                   </span>
@@ -60,8 +60,8 @@ function Marq() {
           <div className="box">
             {marquee.map((item, i) => (
               <div key={i} className="item">
-                <h4 className="d-flex align-items-center">
-                  <span>{item}</span>
+                <h4 className="d-flex align-items-center color-black">
+                  <span className="color-black">{item}</span>
                   <span className="icon-img-50 ml-40">
                     <img src="/assets/imgs/star.png" alt="" />
                   </span>

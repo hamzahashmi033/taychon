@@ -1,10 +1,54 @@
-'use client';
-import React from 'react';
-import data from '@/data/services';
-import { Navigation } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import Link from 'next/link';
+"use client";
+import React from "react";
+import data from "@/data/services";
+import { Navigation } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import Link from "next/link";
+
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
 function Services() {
+  useGSAP(() => {
+    gsap.from(".serv-swipers", {
+      y: 400,
+      opacity: 0,
+      duration: 0.9,
+      scrollTrigger: {
+        trigger: ".service-containers",
+        start: "top 60%",
+        end: "bottom bottom",
+        toggleActions: "play none none none",
+        scrub: 3,
+       
+      },
+    });
+    gsap.from(".wow", {
+      y: 400,
+      opacity: 0,
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: ".services",
+        start: "top 60%",
+        end: "bottom bottom",
+        toggleActions: "play none none none",
+        scrub: 1,
+      },
+    });
+    gsap.from(".subtitle", {
+      y: 400,
+      opacity: 0,
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: ".services",
+        start: "top 60%",
+        end: "bottom bottom",
+        toggleActions: "play none none none",
+        scrub: 1,
+      },
+    });
+  });
   const swiperOptions = {
     modules: [Navigation],
     loop: true,
@@ -26,19 +70,19 @@ function Services() {
     },
 
     navigation: {
-      nextEl: '.services .swiper-button-next',
-      prevEl: '.services .swiper-button-prev',
+      nextEl: ".services .swiper-button-next",
+      prevEl: ".services .swiper-button-prev",
     },
   };
   return (
     <section className="services section-padding">
-      <div className="container">
+      <div className="container service-containers">
         <div className="sec-head mb-80">
           <div className="d-flex align-items-center">
             <div>
-              <span className="sub-title main-color mb-5">Our Specialize</span>
+              <span className="sub-title subtitle main-color mb-5 text-bold">Our Specialize</span>
               <h3 className="fw-600 fz-50 text-u d-rotate wow">
-                <span className="rotate-text">
+                <span className="rotate-text color-black">
                   Featured <span className="fw-200">Services.</span>
                 </span>
               </h3>
@@ -56,7 +100,7 @@ function Services() {
           </div>
         </div>
         <div
-          className="serv-swiper"
+          className="serv-swipers"
           data-carousel="swiper"
           data-loop="true"
           data-space="40"

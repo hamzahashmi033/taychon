@@ -37,7 +37,7 @@ function Marq2() {
           <a href="/page-contact" className="overlay-link"></a>
         </div>
       </div>
-      <div className="main-marq bord-item">
+      <div className="main-marq lrg sub-bg ">
         <div className="slide-har st2">
           <div className="box">
             {AllContact.map((item, i) => (
