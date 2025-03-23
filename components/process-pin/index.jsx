@@ -161,7 +161,7 @@ const PinSection = () => {
                 Our expert designers create intuitive, user-friendly interfaces
                 to enhance engagement. We develop wireframes, mockups, and
                 prototypes, refining usability and branding consistency. Client
-                feedback ensures alignment with the business's vision. Every
+                feedback ensures alignment with the business&apos;s vision. Every
                 element, from typography to colors, is optimized for a seamless,
                 visually appealing experience that boosts satisfaction.
               </p>
