@@ -2,6 +2,7 @@
 import React, { useEffect, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import loadBackgroudImages from "@/common/loadBackgroudImages";
+
 function Header() {
   useLayoutEffect(() => {
     const tl = gsap.timeline();
@@ -12,18 +13,31 @@ function Header() {
       { opacity: 1, translateY: 0 },
       "-=0"
     );
-
+    // GSAP animation for title and description
+    tl.fromTo(".caption h1", { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 1 });
+    tl.fromTo(".caption .text p", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 1 }, "-=0.5");
+    tl.fromTo(".info", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 1 }, "-=0.5");
     return () => tl.kill();
   }, []);
+
   useEffect(() => {
     loadBackgroudImages();
   }, []);
+
   return (
-    <div
-      className="header main-header bg-img valign"
-      data-background="/assets/imgs/background/bg5.jpg"
-      data-overlay-dark="7"
-    >
+    <div className="header main-header bg-img valign">
+      {/* Video Background */}
+      <video
+        className="background-video"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source src="/assets/imgs/video/video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
       <div className="container ontop">
         <div className="row">
           <div className="col-lg-11">
@@ -32,7 +46,7 @@ function Header() {
               <div className="d-flex align-items-end">
                 <div>
                   <h1 className="nowrap">
-                    <span className="main-color">The Taychon Way.</span>
+                    <span className="main-color text-bold">The Taychon Way.</span>
                   </h1>
                 </div>
                 <div>
@@ -49,11 +63,7 @@ function Header() {
           </div>
         </div>
         <div className="row mt-80">
-          <div className="col-lg-6 order-md-2">
-            {/* <div className="icon-img">
-              <img src="/assets/imgs/icon-img/arrow-down-big.png" alt="" />
-            </div> */}
-          </div>
+          <div className="col-lg-6 order-md-2"></div>
           <div className="col-lg-6 d-flex justify-content-end order-md-1">
             <div className="info">
               <h2 className="mb-10">100k +</h2>
@@ -65,6 +75,19 @@ function Header() {
           </div>
         </div>
       </div>
+
+      {/* Background Video Styling */}
+      <style jsx>{`
+        .background-video {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          z-index: -1;
+        }
+      `}</style>
     </div>
   );
 }

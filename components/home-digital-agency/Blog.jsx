@@ -2,14 +2,14 @@ import React from 'react';
 
 function Blog() {
   return (
-    <section className="blog style2">
+    <section className="blog style2 mt-100 mb-100">
       <div className="container">
         <div className="sec-head mb-80">
           <div className="d-flex align-items-center">
             <div>
-              <span className="sub-title main-color mb-5">Our Blogs</span>
+              <span className="sub-title subtitle main-color mb-5 text-bold">Our Blogs</span>
               <h3 className="fw-600 fz-50 text-u d-rotate wow">
-                <span className="rotate-text">
+                <span className="rotate-text color-black">
                   Latest <span className="fw-200">News.</span>
                 </span>
               </h3>
@@ -27,7 +27,7 @@ function Blog() {
         </div>
         <div className="row">
           <div className="col-lg-4">
-            <div className="item md-mb50">
+            <div className="item md-mb50 bg-black border-radius">
               <div className="info sub-title p-color d-flex align-items-center mb-20">
                 <div>
                   <a href="/blog-grid-sidebar">By : Admin</a>
@@ -56,7 +56,7 @@ function Blog() {
             </div>
           </div>
           <div className="col-lg-4">
-            <div className="item md-mb50">
+            <div className="item md-mb50 bg-black border-radius">
               <div className="info sub-title p-color d-flex align-items-center mb-20">
                 <div>
                   <a href="/blog-grid-sidebar">By : Admin</a>
@@ -85,7 +85,7 @@ function Blog() {
             </div>
           </div>
           <div className="col-lg-4">
-            <div className="item">
+            <div className="item md-mb50 bg-black border-radius">
               <div className="info sub-title p-color d-flex align-items-center mb-20">
                 <div>
                   <a href="/blog-grid-sidebar">By : Admin</a>

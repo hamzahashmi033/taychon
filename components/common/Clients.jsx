@@ -1,8 +1,44 @@
-'use client';
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-
+"use client";
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 function Clients() {
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".trigger-client-section",
+        start: "top 80%",
+        end: "bottom bottom",
+        toggleActions: "play none none none",
+        scrub: 3,
+      },
+    });
+    tl.from(".client-head-section", {
+      y: 400,
+      opacity: 0,
+      duration: 0.9,
+      stagger: 0, // No stagger, both animate at the same time
+    }).from(
+      ".swiper5",
+      {
+        y: 400,
+        opacity: 0,
+        duration: 0.9,
+      },
+      "+=0.5"
+    ) // Add a slight delay before animating portfolio-main
+    .from(
+      ".client-sec-bottom",
+      {
+        y: 400,
+        opacity: 0,
+        duration: 0.9,
+      },
+      "+=0.5"
+    ); // Add a slight delay before animating portfolio-main
+  }, []);
   const swiperOptions = {
     speed: 600,
     loop: true,
@@ -10,6 +46,12 @@ function Clients() {
     spaceBetween: 40,
     centeredSlides: true,
     breakpoints: {
+      300: {
+        loop: true,
+        slidesPerView: 2,
+        spaceBetween: 10,
+        centeredSlides: false,
+      },
       // when window width is >= 640px
       640: {
         loop: true,
@@ -34,13 +76,13 @@ function Clients() {
     },
   };
   return (
-    <section className="clients-carso in-circle section-padding">
+    <section className="clients-carso in-circle section-padding bg-black">
       <div className="container">
-        <div className="row justify-content-center">
+        <div className="row justify-content-center trigger-client-section">
           <div className="col-lg-6 col-md-10">
-            <div className="sec-head text-center mb-80">
+            <div className="sec-head client-head-section text-center mb-80">
               <h3>
-                We&apos;re proud to work with <br /> a{' '}
+                We&apos;re proud to work with <br /> a{" "}
                 <span className="opacity-7">diverse range of companies.</span>
               </h3>
             </div>
@@ -90,10 +132,10 @@ function Clients() {
             </SwiperSlide>
           </Swiper>
         </div>
-        <div className="sec-bottom mt-100">
+        <div className="sec-bottom client-sec-bottom mt-100">
           <div className="main-bg d-flex align-items-center">
-            <h6 className="fz-14 fw-400">
-              More than <span className="fw-400"> 200+ companies</span>
+            <h6 className="fz-14 fw-400 text-black">
+              More than <span className="fw-600"> 200+ companies &nbsp;</span>
               trusted us worldwide
             </h6>
           </div>
