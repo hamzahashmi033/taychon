@@ -10,7 +10,8 @@ import Header from "@/components/home-main/Header";
 import Intro from "@/components/home-main/Intro";
 import Marq2 from "@/components/common/Marq2";
 import Navbar from "@/components/common/Navbar";
-import Portfolio from "@/components/p-grid/Portfolio";
+// import Portfolio from "@/components/p-grid/Portfolio";
+import HomeTwoPortfolio from "@/components/PortfolioSection";
 import Services from "@/components/home-main/Services";
 import Team from "@/components/home-main/Team";
 import Testimonials from "@/components/home-creative-agency/Testimonials";
@@ -55,11 +56,12 @@ export default function Home() {
             <Feat />
             <PinSection />
             <Marquee title={"taychon portfolio"}/>
-            <Portfolio />
+            {/* <Portfolio /> */}
+            <HomeTwoPortfolio/>
             <Testimonials />
             <Clients />
             <Blog />
-            {/* <Marq2 /> */}
+            <Marquee title={"contact taychon"}/>
           </main>
           <Footer />
         </div>

@@ -24,7 +24,7 @@ function Footer() {
                 <Link href="#0">info@taychon.com</Link>
               </h6>
               <Link href="#0" className="">
-                <span className="fz-22 main-color">+2 456 (343) 24 45</span>
+                <span className="fz-22 main-color">+44 7808 449570</span>
               </Link>
             </div>
           </div>

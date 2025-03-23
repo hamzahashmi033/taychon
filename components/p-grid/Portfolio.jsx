@@ -636,7 +636,7 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Marketing</span>
-                  <h6 className="text-black">Grain Grower </h6>
+                  <h6 className="text-black">Grain Grower</h6>
                 </div>
                 <div className="ml-auto">
                   <a href="/portfolio-grid">

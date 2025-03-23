@@ -62,7 +62,7 @@ const HomeTwoSponsor = () => {
                         width={200}
                         height={100}
                         quality={100}
-                        style={{width:'200px'}}
+                        // style={{width:'200px'}}
                       />
                     </div>
                   </SwiperSlide>

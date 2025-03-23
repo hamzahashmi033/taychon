@@ -8588,12 +8588,25 @@ footer.clean-footer.crev .circle-blur {
 .pink {
   background: deepPink;
 }
+.sponsor__slider-item{
+  display: flex;
+  justify-content: center;
+}
+.sponsor__slider-item img{
+  width: 200px;
+}
 
+@media (min-width:1200px) and (max-width:1500px) {
+  .sponsor__slider-item img{
+    width: 140px;
+  } 
+}
 /* small screen / mobile layout */
 .mobileContent {
   display: none;
   width: 80vw;
 }
+
 
 .mobilePhoto {
   width: 80vw;
@@ -8685,7 +8698,7 @@ figure:hover img {
   font-size: 14px;
   font-weight: 600;
   font-family: sans-serif;
-  margin-left: -60px;
+  /* margin-left: -60px; */
 }
 
 .marquee-container {
@@ -8723,6 +8736,14 @@ figure:hover img {
 }
 .portfolio__text-slider-single h3 a i{
   font-size: 130px;
+}
+@media (min-width:1200px) and (max-width:1500px) {
+  .portfolio__text-slider-single h3{
+    font-size: 90px;
+  }
+  .portfolio__text-slider-single h3 a i{
+    font-size: 80px;
+  }
 }
 @media (max-width:500px) {
   .portfolio__text-slider-single h3{
@@ -8764,4 +8785,58 @@ figure:hover img {
 
 .portfolio .str a:hover {
   -webkit-text-stroke-color: #2ed06e
+}
+
+.portfolio .portfolio__single {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.portfolio .portfolio__single::before {
+  left: 20px;
+}
+.portfolio .portfolio__single a {
+  width: 100%;
+  color: black;
+}
+.portfolio .portfolio__single img {
+  width: 100%;
+  min-height: 400px;
+}
+.portfolio .portfolio__single:hover .portfolio__single-content {
+  transform: translateY(0px) scale(1);
+}
+
+.portfolio .portfolio__single .portfolio__single-content {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: white;
+    text-align: end;
+    display: flex
+;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    transform: translateY(-160%) scale(1.4);
+    max-width: 90%;
+    padding: 40px;
+    gap: 60px;
+    transition: 1s all;
+}
+.portfolio .portfolio__single:hover::after {
+  height: 1px;
+  width: calc(100% - 40px);
+}
+.portfolio .portfolio__single::after {
+  right: 20px;
+}
+.portfolio .portfolio__single::after, .portfolio .portfolio__single::before {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  width: 0px;
+  height: 0px;
+  background-color: #2ed06e;
+  transition: 1s all;
 }

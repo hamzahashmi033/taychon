@@ -80,7 +80,7 @@ const PinSection = () => {
         scrub: 3,
       },
     });
-  
+
     const details = gsap.utils.toArray(
       ".desktopContentSection:not(:first-child)"
     );
@@ -147,78 +147,56 @@ const PinSection = () => {
             <div className="desktopContentSection desktopContentSection1">
               <h1 className="text-black">Discovery & Research</h1>
               <p className="text-black">
-                We begin by thoroughly understanding your business goals, user
-                needs, and technical requirements. Our team conducts detailed
-                discussions, competitor research, and feasibility analysis to
-                outline a clear project scope. We document key functionalities,
-                integrations, and constraints, ensuring all stakeholders are
-                aligned. This phase helps prevent scope creep, reduces risks,
-                and sets a strong foundation for development. With a
-                well-defined roadmap, we ensure a structured, goal-oriented
-                approach to project execution, meeting client expectations while
-                adhering to industry standards and best practices.
+                We analyze your business goals, user needs, and technical
+                requirements through research and discussions. Key
+                functionalities, integrations, and constraints are documented to
+                align stakeholders. This prevents scope creep, reduces risks,
+                and ensures a structured, goal-oriented approach, meeting client
+                expectations while adhering to industry standards.
               </p>
             </div>
             <div className="desktopContentSection desktopContentSection2">
               <h1 className="text-black">UI/UX Design</h1>
               <p className="text-black">
-                Our expert designers craft visually stunning, intuitive, and
-                user-friendly interfaces that enhance engagement. We create
-                wireframes, mockups, and interactive prototypes to visualize
-                user journeys and refine the experience. By focusing on
-                usability, accessibility, and branding consistency, we ensure
-                seamless interaction between users and the software. We
-                incorporate client feedback iteratively, ensuring the design
-                aligns with the business&apos;s vision. Every element, from
-                typography to color schemes, is optimized to provide a smooth,
-                visually appealing experience that enhances customer
-                satisfaction and retention.
+                Our expert designers create intuitive, user-friendly interfaces
+                to enhance engagement. We develop wireframes, mockups, and
+                prototypes, refining usability and branding consistency. Client
+                feedback ensures alignment with the business's vision. Every
+                element, from typography to colors, is optimized for a seamless,
+                visually appealing experience that boosts satisfaction.
               </p>
             </div>
             <div className="desktopContentSection desktopContentSection3">
               <h1 className="text-black">Development Phase</h1>
               <p className="text-black">
-                Once designs are finalized, our developers bring the vision to
-                life using cutting-edge technologies. We follow agile
-                methodologies, ensuring continuous integration, iterative
-                improvements, and flexibility in adapting to changes. Our team
-                writes clean, efficient, and scalable code, following best
-                coding practices and security protocols. Backend and frontend
-                components are developed in parallel, ensuring a seamless
-                system. Regular code reviews, collaboration, and version control
-                help maintain code quality. By the end of this phase, we have a
-                fully functional product ready for rigorous testing.
+                Once designs are finalized, developers use cutting-edge
+                technologies and agile methods for continuous integration and
+                flexibility. Clean, scalable code ensures security and
+                efficiency. Frontend and backend are developed in parallel, with
+                code reviews and version control maintaining quality, resulting
+                in a fully functional product ready for testing.
               </p>
             </div>
             <div className="desktopContentSection desktopContentSection4">
               <h1 className="text-black">Testing & QA</h1>
               <p className="text-black">
-                Before launch, we conduct thorough testing to identify and
-                resolve potential bugs, performance issues, and security
-                vulnerabilities. Our QA team performs functional, unit,
-                integration, regression, and stress testing to ensure the
-                software operates flawlessly. Automated and manual testing
-                techniques help optimize performance across different devices
-                and environments. We also verify compliance with industry
-                standards and data security protocols. By ensuring a bug-free,
-                stable, and high-performing product, we guarantee an exceptional
-                user experience and seamless functionality in real-world
-                scenarios.
+                Before launch, we conduct extensive testing to fix bugs,
+                performance issues, and security risks. Our QA team performs
+                functional, unit, integration, and stress testing using
+                automated and manual methods. Ensuring compliance with industry
+                standards, we deliver a stable, high-performing, and secure
+                product for real-world use.
               </p>
             </div>
             <div className="desktopContentSection desktopContentSection5">
               <h1 className="text-black">Deployment & Maintenance</h1>
               <p className="text-black">
-                After final approval, we deploy the software to a live
-                production environment, ensuring smooth integration with
-                existing systems. We monitor performance, resolve post-launch
-                issues, and provide continuous updates to improve efficiency and
-                security. Our maintenance services include bug fixes, feature
-                enhancements, performance optimizations, and security patches.
-                We also analyze user feedback to introduce meaningful
-                improvements. With dedicated support and proactive maintenance,
-                we ensure your software remains competitive, secure, and
-                up-to-date with evolving technology trends and business needs.
+                After approval, we deploy the software, ensuring seamless
+                integration. We monitor performance, address issues, and provide
+                updates for security and efficiency. Our maintenance includes
+                bug fixes, optimizations, and feature enhancements. By analyzing
+                user feedback, we ensure continuous improvements, keeping the
+                software competitive and up-to-date.
               </p>
             </div>
           </div>
@@ -230,8 +208,8 @@ const PinSection = () => {
             <h1>Red</h1>
             <p>
               Red is a color often associated with strong emotions such as
-              passion, love, and anger. It&apos;s a bold and attention-grabbing color
-              that can evoke feelings of excitement, warmth, and energy.
+              passion, love, and anger. It&apos;s a bold and attention-grabbing
+              color that can evoke feelings of excitement, warmth, and energy.
             </p>
 
             <div className="mobilePhoto green"></div>
