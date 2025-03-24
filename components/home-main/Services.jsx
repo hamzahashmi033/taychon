@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import data from "@/data/services";
-import { Navigation } from "swiper";
+import { Navigation,Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
 
@@ -10,50 +10,58 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
 function Services() {
+  const mm = gsap.matchMedia()
   useGSAP(() => {
-    gsap.from(".serv-swipers", {
-      y: 400,
-      opacity: 0,
-      duration: 0.9,
-      scrollTrigger: {
-        trigger: ".service-containers",
-        start: "top 60%",
-        end: "bottom bottom",
-        toggleActions: "play none none none",
-        scrub: 3,
-       
-      },
-    });
-    gsap.from(".wow", {
-      y: 400,
-      opacity: 0,
-      duration: 0.5,
-      scrollTrigger: {
-        trigger: ".services",
-        start: "top 60%",
-        end: "bottom bottom",
-        toggleActions: "play none none none",
-        scrub: 1,
-      },
-    });
-    gsap.from(".subtitle", {
-      y: 400,
-      opacity: 0,
-      duration: 0.5,
-      scrollTrigger: {
-        trigger: ".services",
-        start: "top 60%",
-        end: "bottom bottom",
-        toggleActions: "play none none none",
-        scrub: 1,
-      },
+    mm.add("(min-width: 1000px)", () => {
+      gsap.from(".serv-swipers", {
+        y: 400,
+        opacity: 0,
+        duration: 0.9,
+        scrollTrigger: {
+          trigger: ".service-containers",
+          start: "top 60%",
+          end: "bottom bottom",
+          toggleActions: "play none none none",
+          scrub: 3,
+        },
+      });
+  
+      gsap.from(".wow", {
+        y: 400,
+        opacity: 0,
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: ".services",
+          start: "top 60%",
+          end: "bottom bottom",
+          toggleActions: "play none none none",
+          scrub: 1,
+        },
+      });
+  
+      gsap.from(".subtitle", {
+        y: 400,
+        opacity: 0,
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: ".services",
+          start: "top 60%",
+          end: "bottom bottom",
+          toggleActions: "play none none none",
+          scrub: 1,
+        },
+      });
     });
   });
   const swiperOptions = {
-    modules: [Navigation],
+    modules: [Navigation,Autoplay],
     loop: true,
     spaceBetween: 40,
     slidesPerView: 3,
+    autoplay: {
+      delay: 1500, // 1-second delay before sliding
+      disableOnInteraction: false, // Allows autoplay to continue after user interaction
+    },
     breakpoints: {
       0: {
         slidesPerView: 1,
@@ -82,7 +90,7 @@ function Services() {
             <div>
               <span className="sub-title subtitle main-color mb-5 text-bold">Our Specialize</span>
               <h3 className="fw-600 fz-50 text-u d-rotate wow">
-                <span className="rotate-text color-black">
+                <span className=" color-black">
                   Featured <span className="fw-200">Services.</span>
                 </span>
               </h3>

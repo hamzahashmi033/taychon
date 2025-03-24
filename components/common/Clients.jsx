@@ -5,39 +5,43 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 function Clients() {
+  const mm = gsap.matchMedia();
   useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".trigger-client-section",
-        start: "top 80%",
-        end: "bottom bottom",
-        toggleActions: "play none none none",
-        scrub: 3,
-      },
+    mm.add("(min-width:1000px)", () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".trigger-client-section",
+          start: "top 80%",
+          end: "bottom bottom",
+          toggleActions: "play none none none",
+          scrub: 3,
+        },
+      });
+      tl.from(".client-head-section", {
+        y: 400,
+        opacity: 0,
+        duration: 0.9,
+        stagger: 0, // No stagger, both animate at the same time
+      })
+        .from(
+          ".swiper5",
+          {
+            y: 400,
+            opacity: 0,
+            duration: 0.9,
+          },
+          "+=0.5"
+        ) // Add a slight delay before animating portfolio-main
+        .from(
+          ".client-sec-bottom",
+          {
+            y: 400,
+            opacity: 0,
+            duration: 0.9,
+          },
+          "+=0.5"
+        ); // Add a slight delay before animating portfolio-main
     });
-    tl.from(".client-head-section", {
-      y: 400,
-      opacity: 0,
-      duration: 0.9,
-      stagger: 0, // No stagger, both animate at the same time
-    }).from(
-      ".swiper5",
-      {
-        y: 400,
-        opacity: 0,
-        duration: 0.9,
-      },
-      "+=0.5"
-    ) // Add a slight delay before animating portfolio-main
-    .from(
-      ".client-sec-bottom",
-      {
-        y: 400,
-        opacity: 0,
-        duration: 0.9,
-      },
-      "+=0.5"
-    ); // Add a slight delay before animating portfolio-main
   }, []);
   const swiperOptions = {
     speed: 600,

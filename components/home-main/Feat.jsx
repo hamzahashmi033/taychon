@@ -9,35 +9,40 @@ function Feat() {
   useEffect(() => {
     loadBackgroudImages();
   }, []);
+  const mm = gsap.matchMedia();
+
   useGSAP(() => {
-    gsap.from(".cont", {
-      y: 300,
-      opacity: 0,
-      duration: 0.5,
-      scrollTrigger: {
-        trigger: ".feat-cont",
-        start: "top 80%",
-        end: "bottom bottom",
-        toggleActions: "play none none none",
-        scrub: 2,
-    
-      },
-    });
-    gsap.from(gsap.utils.toArray(".serviceCard"), {
-      y: 100,
-      opacity: 0,
-      duration: 0.6,
-      stagger: 0.2, // Delay between each animation
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: ".feat-cont",
-        start: "top 80%",
-        end: "bottom bottom",
-        toggleActions: "play none none none",
-        scrub: 2,
-      },
+    mm.add("(min-width: 1000px)", () => {
+      gsap.from(".cont", {
+        y: 300,
+        opacity: 0,
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: ".feat-cont",
+          start: "top 80%",
+          end: "bottom bottom",
+          toggleActions: "play none none none",
+          scrub: 2,
+        },
+      });
+
+      gsap.from(gsap.utils.toArray(".serviceCard"), {
+        y: 100,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.2, // Delay between each animation
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".feat-cont",
+          start: "top 80%",
+          end: "bottom bottom",
+          toggleActions: "play none none none",
+          scrub: 2,
+        },
+      });
     });
   });
+
   return (
     <section className="feat section-padding">
       <div className="container ontop">

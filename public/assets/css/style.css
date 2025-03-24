@@ -6568,7 +6568,20 @@ footer.clean-footer.crev .circle-blur {
   transform: rotate(180deg);
   opacity: 0.15;
 }
-
+.intro{
+  position: relative;
+}
+.intro .circle-blur {
+  position: absolute;
+  bottom: 0;
+  right: -25vw;
+  width: 60vw;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+  opacity: 0.15;
+  z-index: 10;
+}
 /* Sliders
 -----------------------------------------------------------------*/
 .full-showcase .parallax-slider {

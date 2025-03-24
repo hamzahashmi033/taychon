@@ -7,18 +7,21 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 function Testimonials() {
+  const mm = gsap.matchMedia();
+
   useGSAP(() => {
-    gsap.from(".testimonials-minim", {
-      y: 400,
-      opacity: 0,
-      duration: 0.9,
-      scrollTrigger: {
-        trigger: ".trigger-testimonial",
-        start: "top 90%",
-        end: "bottom bottom",
-        toggleActions: "play none none none",
-        scrub: 3,
-      },
+    mm.add("(min-width:1000px)", () => {
+      gsap.from(".testimonials-minim", {
+        y: 400,
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: ".trigger-testimonial",
+          start: "top 90%",
+          end: "bottom bottom",
+          toggleActions: "play none none none",
+          scrub: 1,
+        },
+      });
     });
   }, []);
   const swiperOptions = {

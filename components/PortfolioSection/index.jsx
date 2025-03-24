@@ -179,7 +179,7 @@ const HomeTwoPortfolio = () => {
                   DISCOVER OUR CASES
                 </span>
                 <h3 className="fw-600 fz-50 text-u d-rotate wow">
-                  <span className="rotate-text color-black">
+                  <span className=" color-black">
                     Latest <span className="fw-200">Projects</span>
                   </span>
                 </h3>

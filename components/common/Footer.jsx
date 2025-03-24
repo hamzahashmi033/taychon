@@ -1,9 +1,32 @@
+"use client"
 import Link from "next/link";
 import React from "react";
-
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 function Footer() {
+
+  const mm = gsap.matchMedia();
+  useGSAP(() => {
+    mm.add("(min-width:1000px)", () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".footer-trigger",
+          start: "top 80%",
+          end: "bottom bottom",
+          toggleActions: "play none none none",
+          scrub: 1,
+        },
+      });
+      tl.from(".clean-footer ", {
+        y: 600,
+        duration: 0.9,
+        stagger: 0, // No stagger, both animate at the same time
+      })
+    });
+  }, []);
   return (
-    <footer className="clean-footer crev ">
+    <footer className="clean-footer crev  footer-trigger">
       <div className="container pb-40 pt-40 ontop ">
         <div className="row justify-content-between">
           <div className="col-lg-3 ">
