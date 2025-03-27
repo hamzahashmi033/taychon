@@ -52,7 +52,7 @@ function Portfolio() {
                 DISCOVER OUR CASES
               </span>
               <h3 className="fw-600 fz-50 text-u d-rotate wow">
-                <span className="rotate-text color-black">
+                <span className="rotate-text p">
                   Latest <span className="fw-200">Projects</span>
                 </span>
               </h3>
@@ -108,7 +108,7 @@ function Portfolio() {
                   <span className="p-color mb-5 sub-title">
                     Web Development
                   </span>
-                  <h6 className="text-black fontIncreaser">Auto Mov</h6>
+                  <h6 className="p fontIncreaser">Auto Mov</h6>
                 </div>
               </figcaption>
             </figure>
@@ -139,7 +139,7 @@ function Portfolio() {
                   <span className="p-color mb-5 sub-title">
                     Web Development
                   </span>
-                  <h6 className="text-black fontIncreaser">Bixos</h6>
+                  <h6 className="p fontIncreaser">Bixos</h6>
                 </div>
               </figcaption>
             </figure>
@@ -173,7 +173,7 @@ function Portfolio() {
                   <span className="p-color mb-5 sub-title">
                     Web Development
                   </span>
-                  <h6 className="text-black fontIncreaser">Grain Grower</h6>
+                  <h6 className="p fontIncreaser">Grain Grower</h6>
                 </div>
               </figcaption>
             </figure>
@@ -188,7 +188,7 @@ function Portfolio() {
                   <span className="p-color mb-5 sub-title">
                     Web Development
                   </span>
-                  <h6 className="text-black">Medikor</h6>
+                  <h6 className="p">Medikor</h6>
                 </div>
                 <div className="ml-auto">
                   <a href="/portfolio-grid">
@@ -208,7 +208,7 @@ function Portfolio() {
                   <span className="p-color mb-5 sub-title">
                     Web Development
                   </span>
-                  <h6 className="text-black">Modhu</h6>
+                  <h6 className="p">Modhu</h6>
                 </div>
                 <div className="ml-auto">
                   <a href="/portfolio-grid">
@@ -228,7 +228,7 @@ function Portfolio() {
                   <span className="p-color mb-5 sub-title">
                     Web Development
                   </span>
-                  <h6 className="text-black">Ocle</h6>
+                  <h6 className="p">Ocle</h6>
                 </div>
                 <div className="ml-auto">
                   <a href="/portfolio-grid">
@@ -248,7 +248,7 @@ function Portfolio() {
                   <span className="p-color mb-5 sub-title">
                     Web Development
                   </span>
-                  <h6 className="text-black">Red Business</h6>
+                  <h6 className="p">Red Business</h6>
                 </div>
                 <div className="ml-auto">
                   <a href="/portfolio-grid">
@@ -268,7 +268,7 @@ function Portfolio() {
                   <span className="p-color mb-5 sub-title">
                     Web Development
                   </span>
-                  <h6 className="text-black">Sell Shop</h6>
+                  <h6 className="p">Sell Shop</h6>
                 </div>
                 <div className="ml-auto">
                   <a href="/portfolio-grid">
@@ -288,7 +288,7 @@ function Portfolio() {
                   <span className="p-color mb-5 sub-title">
                     Web Development
                   </span>
-                  <h6 className="text-black">Softo</h6>
+                  <h6 className="p">Softo</h6>
                 </div>
                 <div className="ml-auto">
                   <a href="/portfolio-grid">
@@ -308,7 +308,7 @@ function Portfolio() {
                   <span className="p-color mb-5 sub-title">
                     Web Development
                   </span>
-                  <h6 className="text-black">Vitour</h6>
+                  <h6 className="p">Vitour</h6>
                 </div>
                 <div className="ml-auto">
                   <a href="/portfolio-grid">
@@ -328,7 +328,7 @@ function Portfolio() {
                   <span className="p-color mb-5 sub-title">
                     Web Development
                   </span>
-                  <h6 className="text-black">Web Tech</h6>
+                  <h6 className="p">Web Tech</h6>
                 </div>
                 <div className="ml-auto">
                   <a href="/portfolio-grid">
@@ -348,7 +348,7 @@ function Portfolio() {
                   <span className="p-color mb-5 sub-title">
                     Web Development
                   </span>
-                  <h6 className="text-black">Wia Tech</h6>
+                  <h6 className="p">Wia Tech</h6>
                 </div>
                 <div className="ml-auto">
                   <a href="/portfolio-grid">
@@ -366,7 +366,7 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Graphic Design</span>
-                  <h6 className="text-black">Card Design</h6>
+                  <h6 className="p">Card Design</h6>
                 </div>
                 <div className="ml-auto">
                   <a href="/portfolio-grid">
@@ -384,7 +384,7 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Graphic Design</span>
-                  <h6 className="text-black">Card Design</h6>
+                  <h6 className="p">Card Design</h6>
                 </div>
                 <div className="ml-auto">
                   <a href="/portfolio-grid">
@@ -402,7 +402,7 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Graphic Design</span>
-                  <h6 className="text-black">Logo Design</h6>
+                  <h6 className="p">Logo Design</h6>
                 </div>
                 <div className="ml-auto">
                   <a href="/portfolio-grid">
@@ -420,7 +420,7 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Graphic Design</span>
-                  <h6 className="text-black">Logo Design</h6>
+                  <h6 className="p">Logo Design</h6>
                 </div>
                 <div className="ml-auto">
                   <a href="/portfolio-grid">
@@ -438,7 +438,7 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Graphic Design</span>
-                  <h6 className="text-black">Card Design</h6>
+                  <h6 className="p">Card Design</h6>
                 </div>
                 <div className="ml-auto">
                   <a href="/portfolio-grid">
@@ -456,7 +456,7 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Graphic Design</span>
-                  <h6 className="text-black">Card Design</h6>
+                  <h6 className="p">Card Design</h6>
                 </div>
                 <div className="ml-auto">
                   <a href="/portfolio-grid">
@@ -474,7 +474,7 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Graphic Design</span>
-                  <h6 className="text-black">Card Design</h6>
+                  <h6 className="p">Card Design</h6>
                 </div>
                 <div className="ml-auto">
                   <a href="/portfolio-grid">
@@ -492,7 +492,7 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Graphic Design</span>
-                  <h6 className="text-black">Logo Design</h6>
+                  <h6 className="p">Logo Design</h6>
                 </div>
                 <div className="ml-auto">
                   <a href="/portfolio-grid">
@@ -510,7 +510,7 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Graphic Design</span>
-                  <h6 className="text-black">Card Design</h6>
+                  <h6 className="p">Card Design</h6>
                 </div>
                 <div className="ml-auto">
                   <a href="/portfolio-grid">
@@ -528,7 +528,7 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Marketing</span>
-                  <h6 className="text-black">Modhu</h6>
+                  <h6 className="p">Modhu</h6>
                 </div>
                 <div className="ml-auto">
                   <a href="/portfolio-grid">
@@ -546,7 +546,7 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Marketing</span>
-                  <h6 className="text-black">The Verge</h6>
+                  <h6 className="p">The Verge</h6>
                 </div>
                 <div className="ml-auto">
                   <a href="/portfolio-grid">
@@ -564,7 +564,7 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Marketing</span>
-                  <h6 className="text-black">Ocle</h6>
+                  <h6 className="p">Ocle</h6>
                 </div>
                 <div className="ml-auto">
                   <a href="/portfolio-grid">
@@ -582,7 +582,7 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Marketing</span>
-                  <h6 className="text-black">Red Business</h6>
+                  <h6 className="p">Red Business</h6>
                 </div>
                 <div className="ml-auto">
                   <a href="/portfolio-grid">
@@ -600,7 +600,7 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Marketing</span>
-                  <h6 className="text-black">Sell Shop</h6>
+                  <h6 className="p">Sell Shop</h6>
                 </div>
                 <div className="ml-auto">
                   <a href="/portfolio-grid">
@@ -618,7 +618,7 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Marketing</span>
-                  <h6 className="text-black">Softo</h6>
+                  <h6 className="p">Softo</h6>
                 </div>
                 <div className="ml-auto">
                   <a href="/portfolio-grid">
@@ -636,7 +636,7 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Marketing</span>
-                  <h6 className="text-black">Grain Grower</h6>
+                  <h6 className="p">Grain Grower</h6>
                 </div>
                 <div className="ml-auto">
                   <a href="/portfolio-grid">
@@ -654,7 +654,7 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Marketing</span>
-                  <h6 className="text-black">Bixos</h6>
+                  <h6 className="p">Bixos</h6>
                 </div>
                 <div className="ml-auto">
                   <a href="/portfolio-grid">
@@ -672,7 +672,7 @@ function Portfolio() {
               <div className="cont d-flex align-items-end mt-30">
                 <div>
                   <span className="p-color mb-5 sub-title">Marketing</span>
-                  <h6 className="text-black">Auto Mov</h6>
+                  <h6 className="p">Auto Mov</h6>
                 </div>
                 <div className="ml-auto">
                   <a href="/portfolio-grid">

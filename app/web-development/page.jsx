@@ -39,7 +39,7 @@ const page = () => {
       <Navbar />
       <div id="smooth-wrapper">
         <div id="smooth-content">
-          <main className="main-bg o-hidden">
+          <main className="bg-black o-hidden">
             <Header
               banner={"/assets/imgs/background/web-development.jpg"}
               title={"WEB DEVELOPMENT"}

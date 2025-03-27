@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -49,6 +50,10 @@ function Clients() {
     slidesPerView: 5,
     spaceBetween: 40,
     centeredSlides: true,
+    modules:[Autoplay],
+    autoplay:{
+      delay:2000
+    },
     breakpoints: {
       300: {
         loop: true,

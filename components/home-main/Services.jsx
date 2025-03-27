@@ -90,7 +90,7 @@ function Services() {
             <div>
               <span className="sub-title subtitle main-color mb-5 text-bold">Our Specialize</span>
               <h3 className="fw-600 fz-50 text-u d-rotate wow">
-                <span className=" color-black">
+                <span className=" p">
                   Featured <span className="fw-200">Services.</span>
                 </span>
               </h3>

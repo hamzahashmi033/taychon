@@ -178,6 +178,10 @@ span {
   color: black;
   font-weight: 600;
 }
+.color-white {
+  color: white;
+  font-weight: 600;
+}
 .text-bold {
   font-weight: 700;
 }
@@ -200,11 +204,11 @@ figure {
 }
 
 .main-color {
-  color: #2ed06e !important;
+  color: #fd5b38 !important;
 }
 
 .main-colorbg {
-  background: #2ed06e !important;
+  background: #fd5b38 !important;
 }
 
 .main-color2 {
@@ -231,7 +235,7 @@ figure {
 }
 
 .p-color {
-  color: #2ed06e;
+  color: #fd5b38;
 }
 
 .btn:hover,
@@ -1808,7 +1812,7 @@ img.left {
 
 .stroke {
   color: transparent;
-  -webkit-text-stroke: 2px rgba(0, 0, 0, 0.9);
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.8);
 }
 .stroke1{
   color: Black;
@@ -3704,7 +3708,7 @@ body.loaded {
 
 .navbar .contact-button {
   position: relative;
-  background-color: #2ed06e !important;
+  background-color: #fd5b38 !important;
 }
 
 .navbar .contact-button:after {
@@ -4834,7 +4838,24 @@ footer .subscribe-minimal .social-icon a {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 50%;
 }
+.progress-line {
+  position: absolute;
+  left: -10px; /* Adjust as needed */
+  top: 200px;
+  width: 4px;
+  height: 86%; /* Full height */
+  background-color: #2b2b2b; /* Base color */
+  overflow: hidden; /* Ensures smooth animation */
+  border-radius: 100px;
+}
 
+.progress-line-fill {
+  width: 100%;
+  height: 0%; /* Starts from 0 */
+  background-color: white; /* The scrolling effect */
+  transition: height 0.2s ease;
+  border-radius: 100px;
+}
 footer.clean-footer.crev {
   position: relative;
   height: 100vh;
@@ -4842,10 +4863,9 @@ footer.clean-footer.crev {
   flex-direction: column;
   justify-content: center;
 }
-@media (min-width: 1024px) {
-  footer.clean-footer.crev  {
-      position: sticky;
-      left: 0;
+@media (min-width: 300px) and (max-width:1000px) {
+  footer.clean-footer.crev{
+    height: auto;
   }
 }
 
@@ -6160,7 +6180,7 @@ footer.clean-footer.crev .circle-blur {
 
 .filtering span.active {
   opacity: 1;
-  color: #2ed06e;
+  color: #fd5b38;
 }
 
 .filtering span.text {
@@ -8583,7 +8603,22 @@ footer.clean-footer.crev .circle-blur {
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
   margin: auto;
 }
-
+@media (min-width:300px) and (max-width:1000px) {
+  .desktopPhotos{
+    display: none;
+    border: 1px solid white;
+  }
+  .desktopPhoto{
+    display: none;
+  }
+}
+.mobilePhoto{
+}
+.mobilePhoto img{
+  width: 100%;
+  height: 100%;
+  border-radius: 6vw;
+}
 .desktopPhoto {
   position: absolute;
   width: 100%;
@@ -8708,7 +8743,7 @@ figure:hover img {
   padding: 12px 20px;
   line-height: 1;
   border: 1px solid #414141;
-  color: #2ed06e;
+  color: #fd5b38;
   border-radius: 30px;
   margin-bottom: 32px;
   text-transform: uppercase;
@@ -8746,7 +8781,7 @@ figure:hover img {
   display: flex;
   align-items: center;
   gap: 30px;
-  color: black;
+  color:#ffffff;
   white-space: nowrap;
   font-size: 130px;
   font-weight: 700;
@@ -8786,7 +8821,7 @@ figure:hover img {
   -webkit-text-stroke: 2px black
 }
 .portfolio .portfolio__text-slider-single:nth-of-type(2n) .project__text-slider-single h2 a:hover {
-  -webkit-text-stroke-color: #2ed06e
+  -webkit-text-stroke-color: #fd5b38
 }
 
 .portfolio .str {
@@ -8797,11 +8832,11 @@ figure:hover img {
 
 .portfolio .str i {
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 2px #2ed06e
+  -webkit-text-stroke: 2px #fd5b38
 }
 
 .portfolio .str a:hover {
-  -webkit-text-stroke-color: #2ed06e
+  -webkit-text-stroke-color: #fd5b38
 }
 
 .portfolio .portfolio__single {
@@ -8854,6 +8889,6 @@ figure:hover img {
   bottom: 20px;
   width: 0px;
   height: 0px;
-  background-color: #2ed06e;
+  background-color: #fd5b38;
   transition: 1s all;
 }

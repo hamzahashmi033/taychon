@@ -50,11 +50,11 @@ function Feat() {
           <div className="col-lg-5">
             <div className="cont md-mb50">
               <h6 className="sub-title main-color mb-15 text-bold">Trusted Services</h6>
-              <h3 className="mb-30 color-black">
+              <h3 className="mb-30 p">
                 The service we offer is specifically designed to meet your
                 needs.
               </h3>
-              <p className="color-black">
+              <p className="p">
                 Driven professional dedicated to making a lasting impact through
                 innovative solutions and unwavering excellence.
               </p>

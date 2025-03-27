@@ -40,7 +40,7 @@ export default function Home() {
       <Navbar />
       <div id="smooth-wrapper">
         <div id="smooth-content">
-          <main className="main-bg o-hidden">
+          <main className="bg-black o-hidden">
             <Header />
             <Intro />
             <Numbers />

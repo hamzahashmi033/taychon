@@ -22,14 +22,14 @@ function Intro() {
           </div>
           <div className="col-lg-6 valign">
             <div className="cont">
-              <h3 className="mb-30 text-black">
+              <h3 className="mb-30 p">
                 Taychon is innovative <span className="fw-200">& advance</span>{" "}
                 software and creative agency which has{" "}
                 <span className="fw-200">experienced</span> &{" "}
                 <span className="fw-200">skilled</span>
                 team members.
               </h3>
-              <p className="text-black">
+              <p className="p">
                 Taychon is a forward-thinking software and creative design
                 company dedicated to building cutting-edge digital solutions. We
                 specialize in web development, app creation, AI integration, and

@@ -1,4 +1,4 @@
-import Link from 'next/link';
+
 import React from 'react';
 
 function Marq2() {
@@ -37,7 +37,7 @@ function Marq2() {
           <a href="/page-contact" className="overlay-link"></a>
         </div>
       </div>
-      <div className="main-marq lrg sub-bg ">
+      <div className="main-marq bord-item">
         <div className="slide-har st2">
           <div className="box">
             {AllContact.map((item, i) => (
@@ -58,7 +58,7 @@ function Marq2() {
             ))}
           </div>
 
-          <Link href="/page-contact" className="overlay-link"></Link>
+          <a href="/page-contact" className="overlay-link"></a>
         </div>
       </div>
     </section>

@@ -217,7 +217,7 @@ function Navbar() {
             href="/page-contact"
             className="butn butn-sm butn-bg main-colorbg radius-5"
           >
-            <span className="text color-black">Let&apos;s Contact</span>
+            <span className="text color-white">Let&apos;s Contact</span>
           </Link>
         </div>
       </div>

@@ -47,7 +47,7 @@ export default function Home() {
       <Navbar />
       <div id="smooth-wrapper">
         <div id="smooth-content">
-          <main className="main-bg o-hidden">
+          <main className="bg-black o-hidden">
             <Header />
             <HomeTwoSponsor />
             <Intro />
@@ -61,6 +61,7 @@ export default function Home() {
             <Testimonials />
             <Clients />
             <Blog />
+            <Marq2/>
             <Marquee title={"contact taychon"}/>
           </main>
           <Footer />

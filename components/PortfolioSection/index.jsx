@@ -179,7 +179,7 @@ const HomeTwoPortfolio = () => {
                   DISCOVER OUR CASES
                 </span>
                 <h3 className="fw-600 fz-50 text-u d-rotate wow">
-                  <span className=" color-black">
+                  <span className="p">
                     Latest <span className="fw-200">Projects</span>
                   </span>
                 </h3>
@@ -235,7 +235,7 @@ const HomeTwoPortfolio = () => {
                 </Link>
                 <div className="portfolio__single-content">
                   <Link href="portfolio">
-                    <FaArrowUpRightFromSquare size={50} color="#2ed06e" />
+                    <FaArrowUpRightFromSquare size={50} color="#fd5b38" />
                   </Link>
                   <h3 className="portfolioText">
                     <Link href="portfolio">{item.title}</Link>

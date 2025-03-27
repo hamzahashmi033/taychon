@@ -22,15 +22,15 @@ function Blogs() {
                           <a href="/blog-grid-sidebar">August 14, 2023</a>
                         </div>
                       </div>
-                      <h4 className="fz-30 text-black">
+                      <h4 className="fz-30 p">
                         Design Inspiration: Where to Find Creative Ideas
                       </h4>
                       <a
                         href="/blog-details"
-                        className="butn-crev d-flex align-items-center mt-40 text-black"
+                        className="butn-crev d-flex align-items-center mt-40 p"
                       >
                         <span className="hover-this">
-                          <span className="circle hover-anim">
+                          <span className="circle hover-anim p">
                             <i className="ti-arrow-top-right"></i>
                           </span>
                         </span>
@@ -53,12 +53,12 @@ function Blogs() {
                           <a href="/blog-grid-sidebar">August 14, 2023</a>
                         </div>
                       </div>
-                      <h4 className="fz-30 text-black">
+                      <h4 className="fz-30 p">
                         Typography: Choosing Fonts for Maximum Impact
                       </h4>
                       <a
                         href="/blog-details"
-                        className="butn-crev d-flex align-items-center mt-40 text-black"
+                        className="butn-crev d-flex align-items-center mt-40 p"
                       >
                         <span className="hover-this">
                           <span className="circle hover-anim">
@@ -84,12 +84,12 @@ function Blogs() {
                           <a href="/blog-grid-sidebar">August 14, 2023</a>
                         </div>
                       </div>
-                      <h4 className="fz-30 text-black">
+                      <h4 className="fz-30 p">
                         Design Inspiration: Where to Find Creative Ideas
                       </h4>
                       <a
                         href="/blog-details"
-                        className="butn-crev d-flex align-items-center mt-40 text-black"
+                        className="butn-crev d-flex align-items-center mt-40 p"
                       >
                         <span className="hover-this">
                           <span className="circle hover-anim">
@@ -115,12 +115,12 @@ function Blogs() {
                           <a href="/blog-grid-sidebar">August 14, 2023</a>
                         </div>
                       </div>
-                      <h4 className="fz-30 text-black">
+                      <h4 className="fz-30 p">
                         Typography: Choosing Fonts for Maximum Impact
                       </h4>
                       <a
                         href="/blog-details"
-                        className="butn-crev d-flex align-items-center mt-40 text-black"
+                        className="butn-crev d-flex align-items-center mt-40 p"
                       >
                         <span className="hover-this">
                           <span className="circle hover-anim">
@@ -146,12 +146,12 @@ function Blogs() {
                           <a href="/blog-grid-sidebar">August 14, 2023</a>
                         </div>
                       </div>
-                      <h4 className="fz-30 text-black">
+                      <h4 className="fz-30 p">
                         Design Inspiration: Where to Find Creative Ideas
                       </h4>
                       <a
                         href="/blog-details"
-                        className="butn-crev d-flex align-items-center mt-40 text-black"
+                        className="butn-crev d-flex align-items-center mt-40 p"
                       >
                         <span className="hover-this">
                           <span className="circle hover-anim">
@@ -177,12 +177,12 @@ function Blogs() {
                           <a href="/blog-grid-sidebar">August 14, 2023</a>
                         </div>
                       </div>
-                      <h4 className="fz-30 text-black">
+                      <h4 className="fz-30 p">
                         Typography: Choosing Fonts for Maximum Impact
                       </h4>
                       <a
                         href="/blog-details"
-                        className="butn-crev d-flex align-items-center mt-40 text-black"
+                        className="butn-crev d-flex align-items-center mt-40 p"
                       >
                         <span className="hover-this">
                           <span className="circle hover-anim">
@@ -200,13 +200,13 @@ function Blogs() {
           <div className="col-lg-4">
             <div className="sidebar">
               <div className="widget">
-                <h6 className="title-widget text-black">Search Here</h6>
+                <h6 className="title-widget p">Search Here</h6>
                 <div className="search-box">
                   <input type="text" name="search-post" placeholder="Search" />
-                  <span className="icon pe-7s-search text-black"></span>
+                  <span className="icon pe-7s-search p"></span>
                 </div>
               </div>
-              <div className="widget catogry text-black">
+              <div className="widget catogry p">
                 <h6 className="title-widget">Categories</h6>
                 <ul className="rest">
                   <li>
@@ -241,7 +241,7 @@ function Blogs() {
                   </li>
                 </ul>
               </div>
-              <div className="widget last-post-thum text-black">
+              <div className="widget last-post-thum p">
                 <h6 className="title-widget">latest Posts</h6>
                 <div className="item d-flex align-items-center">
                   <div>
@@ -316,7 +316,7 @@ function Blogs() {
                   </div>
                 </div>
               </div>
-              <div className="widget tags text-black">
+              <div className="widget tags p">
                 <h6 className="title-widget">Tags</h6>
                 <div>
                   <a href="/blog-grid-sidebar">Creative</a>

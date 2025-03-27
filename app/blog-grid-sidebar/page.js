@@ -8,6 +8,7 @@ import Navbar from '@/components/common/Navbar';
 import Script from 'next/script';
 import Header from '@/components/blog-grid-sidebar/Header';
 import Blogs from '@/components/blog-grid-sidebar/Blogs';
+import Marq2 from '@/components/common/Marq2';
 export const metadata = {
   title: 'All Blogs of Taychon',
   icons: {
@@ -32,9 +33,10 @@ export default function Home() {
       <div id="smooth-wrapper">
         <Navbar />
         <div id="smooth-content">
-          <main className="main-bg">
+          <main className="main-bg bg-black">
             <Header />
             <Blogs />
+            <Marq2/>
           </main>
           <Footer />
         </div>
