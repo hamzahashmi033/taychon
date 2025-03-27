@@ -7,7 +7,7 @@ function Contact() {
         <div className="row">
           <div className="col-lg-4 valign">
             <div className="sec-head info-box full-width md-mb80">
-              <div className="phone fz-30 fw-600 underline main-color">
+              <div className="phone fz-30 fw-600 underline main-color a-font">
                 <a href="#0">+2 456 (343) 24 45</a>
               </div>
               <div className="morinfo mt-50 pb-30 bord-thin-bottom">

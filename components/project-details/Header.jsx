@@ -28,7 +28,7 @@ function Header({banner, title}) {
         <div className="row">
           <div className="col-12">
             <div className="caption">
-              <h1 className='fw-bolder'>{title}</h1>
+              <h1 className='fw-bolder fs-1'>{title}</h1>
             </div>
           </div>
         </div>
