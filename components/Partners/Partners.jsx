@@ -62,7 +62,7 @@ const HomeTwoSponsor = () => {
                         width={200}
                         height={100}
                         quality={100}
-                        style={{ width: index === 4 ? "50px" : "0px",marginTop: index === 4 ? "-10px" : "0px",}}
+                        // style={{ width: index === 4 ? "50px" : "0px",marginTop: index === 4 ? "-10px" : "0px",}}
                         
                         // style={{width:'200px'}}
                       />

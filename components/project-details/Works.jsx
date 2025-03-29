@@ -1,7 +1,7 @@
 import React from 'react';
 function Works({banner1,banner2}) {
   return (
-    <div className="img-column">
+    <div className="img-column ">
       <div className="container">
         <div className="row">
           <div className="col-lg-6">
