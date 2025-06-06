@@ -1,692 +1,238 @@
 "use client";
+import React, { useEffect, useState } from "react";
 import initIsotope from "@/common/initIsotope";
-import React, { useEffect, useLayoutEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
+import Image from 'next/image';
+import Link from 'next/link';
+import { getPortfolioItems, iconMap } from '@/data/portfolio';
 
-function Portfolio() {
-  useGSAP(() => {
-    // Create a GSAP timeline
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".trigger-portfolio-head",
-        start: "top 80%",
-        end: "bottom bottom",
-        toggleActions: "play none none none",
-        scrub: 3,
-      },
-    });
+const Portfolio = () => {
+  const [activeCategory, setActiveCategory] = useState('*');
+  const projects = getPortfolioItems();
 
-    // Add animations to the timeline
-    // Add animations to the timeline
-    tl.from([".portfolio-head", ".filtering"], {
-      y: 400,
-      opacity: 0,
-      duration: 0.9,
-      stagger: 0, // No stagger, both animate at the same time
-    }).from(
-      ".portfolio-main",
-      {
-        y: 800,
-        opacity: 0,
-        duration: 0.9,
-      },
-      "+=0.5"
-    ); // Add a slight delay before animating portfolio-main
-  }, []);
   useEffect(() => {
     initIsotope();
   }, []);
-  return (
-    <section className="work-grid section-padding pb-0">
-      <div className="container-fluid">
-        <div className="row mb-80 trigger-portfolio-head">
-          <div className="col-lg-4 portfolio-head">
-            {/* <div className="sec-head">
-              <h6 className="sub-title main-color mb-10">DISCOVER OUR CASES</h6>
-              <h3 className="text-black">Latest Projects</h3>
-            </div> */}
-            <div>
-              <span className="sub-title subtitle main-color mb-5 text-bold">
-                DISCOVER OUR CASES
-              </span>
-              <h3 className="fw-600 fz-50 text-u d-rotate wow">
-                <span className="rotate-text p">
-                  Latest <span className="fw-200">Projects</span>
-                </span>
-              </h3>
-            </div>
-          </div>
-          <div className="filtering col-lg-12 d-flex justify-content-end align-items-end">
-            <div>
-              <div className="filter">
-                <span data-filter="*" className="active" data-count="30">
-                  All
-                </span>
-                <span data-filter=".design" data-count="09">
-                  Design
-                </span>
-                <span data-filter=".development" data-count="12">
-                  Development
-                </span>
-                <span data-filter=".marketing" data-count="09">
-                  Marketing
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-      </div>
 
-      <div className="container-fluid">
-        <div className="gallery portfolio-main row md-marg">
-          <div className="col-lg-4 col-md-6 items development">
-            {/* <div className="item mb-50" > 
-              <div className="img">
-                <img src="/assets/imgs/portfolio/Auto Mov.png" alt="" />
+  const categories = [...new Set(projects.map(project => project.category))];
+
+  const handleFilterClick = (category) => {
+    setActiveCategory(category);
+    
+    const iso = window.Isotope.data('.grid');
+    if (iso) {
+      if (category === '*') {
+        iso.arrange({ filter: '*' });
+      } else {
+        iso.arrange({ filter: `.${category}` });
+      }
+    }
+  };
+
+  const filteredProjects = activeCategory === '*' 
+    ? projects 
+    : projects.filter(project => project.category === activeCategory);
+
+  const renderIcon = (iconName) => {
+    const IconComponent = iconMap[iconName];
+    return IconComponent ? <IconComponent size={20} /> : null;
+  };
+
+  return (
+    <>
+      <style jsx global>{`
+        .bg-black-gradient {
+          background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+        }
+        .glass-card {
+          background: rgba(25,25,25,0.7);
+          border: 1px solid rgba(255,255,255,0.1);
+          backdrop-filter: blur(10px);
+          aspect-ratio: 1;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+        .website-bg {
+          background: #121212;
+        }
+        .cta-btn {
+          background: transparent;
+          color: white;
+          border: none;
+          transition: all 0.3s ease;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0;
+          font-size: 0.875rem;
+          justify-content: flex-start;
+          text-decoration: none;
+        }
+        .cta-btn:hover {
+          background: transparent;
+          opacity: 0.8;
+        }
+        .min-sec-h {
+          min-height: 600px;
+        }
+        .filter-menu {
+          display: flex;
+          justify-content: center;
+          gap: 1rem;
+          margin-bottom: 3rem;
+        }
+        .filter-btn {
+          background: transparent;
+          color: white;
+          border: 1px solid rgba(255,255,255,0.2);
+          padding: 0.5rem 1rem;
+          border-radius: 2rem;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+        .filter-btn:hover,
+        .filter-btn.active {
+          background: rgba(255,255,255,0.1);
+          border-color: rgba(255,255,255,0.3);
+        }
+      `}</style>
+
+      <div className="bg-black-gradient min-vh-100 text-white">
+        <div className="container py-5">
+          {/* <div className="filter-menu">
+            <button 
+              className={`filter-btn ${activeCategory === '*' ? 'active' : ''}`} 
+              onClick={() => handleFilterClick('*')}
+            >
+              All
+            </button>
+            {categories.map((category, index) => (
+              <button 
+                key={index} 
+                className={`filter-btn ${activeCategory === category ? 'active' : ''}`}
+                onClick={() => handleFilterClick(category)}
+              >
+                {category.charAt(0).toUpperCase() + category.slice(1)}
+              </button>
+            ))}
+          </div> */}
+
+          <div className="grid">
+            {filteredProjects.map((project, index) => (
+              <div key={project.id} className={`grid-item ${project.category} row align-items-center justify-content-between min-sec-h`}>
+                {index % 2 === 0 ? (
+                  <>
+                    <div className="col-lg-6 text-center mb-5 mb-lg-0">
+                      <div className="position-relative mx-auto" style={{ maxWidth: '600px' }}>
+                        <Image
+                          src={project.image}
+                          alt={`${project.name} Website`}
+                          className="img-fluid rounded-4"
+                          width={600}
+                          height={600}
+                          priority
+                        />
+                      </div>
+                    </div>
+
+                    <div className="col-lg-6">
+                      <div className="mx-auto" style={{ maxWidth: '600px' }}>
+                        <h1 className="display-1 fw-bold mb-4 lh-1">
+                          {project.name}
+                        </h1>
+
+                        <p className="lead mb-5 lh-base opacity-90">
+                          {project.description}
+                        </p>
+
+                        <div className="row row-cols-2 row-cols-sm-4 g-4 mt-4">
+                          {project.features.map((feature, index) => (
+                            <div key={index} className="col">
+                              <div className="glass-card rounded-3 p-3 text-center h-100">
+                                <div className="text-primary mb-2">
+                                  {renderIcon(feature.icon)}
+                                </div>
+                                <h6 className="fw-bold mb-2 text-white small">
+                                  {feature.title}
+                                </h6>
+                                <p className="text-white-50 mb-0 small">
+                                  {feature.description}
+                                </p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+
+                        <div className="margin-top-cta mt-4">
+                          <Link href={`/case-study/${project.id}`} className="cta-btn">
+                            View Case Study
+                            <span>→</span>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="col-lg-6">
+                      <div className="mx-auto" style={{ maxWidth: '600px' }}>
+                        <h1 className="display-1 fw-bold mb-4 lh-1">
+                          {project.name}
+                        </h1>
+
+                        <p className="lead mb-5 lh-base opacity-90">
+                          {project.description}
+                        </p>
+
+                        <div className="row row-cols-2 row-cols-sm-4 g-4 mt-4">
+                          {project.features.map((feature, index) => (
+                            <div key={index} className="col">
+                              <div className="glass-card rounded-3 p-3 text-center h-100">
+                                <div className="text-primary mb-2">
+                                  {renderIcon(feature.icon)}
+                                </div>
+                                <h6 className="fw-bold mb-2 text-white small">
+                                  {feature.title}
+                                </h6>
+                                <p className="text-white-50 mb-0 small">
+                                  {feature.description}
+                                </p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+
+                        <div className="margin-top-cta mt-4">
+                          <Link href={`/case-study/${project.id}`} className="cta-btn">
+                            View Case Study
+                            <span>→</span>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="col-lg-6 text-center mb-5 mb-lg-0">
+                      <div className="position-relative mx-auto" style={{ maxWidth: '600px' }}>
+                        <Image
+                          src={project.image}
+                          alt={`${project.name} Website`}
+                          className="img-fluid rounded-4"
+                          width={600}
+                          height={600}
+                          priority
+                        />
+                      </div>
+                    </div>
+                  </>
+                )}
               </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">
-                    Web Development
-                  </span>
-                  <h6 className="text-black">Auto Mov</h6>
-                </div>
-                <div className="ml-auto">
-                  <a href="/portfolio-grid">
-                    <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div> */}
-            <figure className="mb-50">
-              <img src="/assets/imgs/portfolio/Auto Mov.png" alt="Mountains" />
-              <figcaption>
-                <div>
-                  <span className="p-color mb-5 sub-title">
-                    Web Development
-                  </span>
-                  <h6 className="p fontIncreaser">Auto Mov</h6>
-                </div>
-              </figcaption>
-            </figure>
-          </div>
-          <div className="col-lg-4 col-md-6 items development">
-            {/* <div className="item mb-50">
-              <div className="img">
-                <img src="/assets/imgs/portfolio/BIXOS.png" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">
-                    Web Development
-                  </span>
-                  <h6 className="text-black">Bixos</h6>
-                </div>
-                <div className="ml-auto">
-                  <a href="/portfolio-grid">
-                    <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div> */}
-            <figure className="mb-50">
-              <img src="/assets/imgs/portfolio/BIXOS.png" alt="Mountains" />
-              <figcaption>
-                <div>
-                  <span className="p-color mb-5 sub-title">
-                    Web Development
-                  </span>
-                  <h6 className="p fontIncreaser">Bixos</h6>
-                </div>
-              </figcaption>
-            </figure>
-          </div>
-          <div className="col-lg-4 col-md-6 items development">
-            {/* <div className="item mb-50">
-              <div className="img">
-                <img src="/assets/imgs/portfolio/Grain Grower.png" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">
-                    Web Development
-                  </span>
-                  <h6 className="text-black">Grain Grower</h6>
-                </div>
-                <div className="ml-auto">
-                  <a href="/portfolio-grid">
-                    <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div> */}
-            <figure className="mb-50">
-              <img
-                src="/assets/imgs/portfolio/Grain Grower.png"
-                alt="Mountains"
-              />
-              <figcaption>
-                <div>
-                  <span className="p-color mb-5 sub-title">
-                    Web Development
-                  </span>
-                  <h6 className="p fontIncreaser">Grain Grower</h6>
-                </div>
-              </figcaption>
-            </figure>
-          </div>
-          <div className="col-lg-4 col-md-6 items development">
-            <div className="item mb-50">
-              <div className="img">
-                <img src="/assets/imgs/portfolio/Medikor.png" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">
-                    Web Development
-                  </span>
-                  <h6 className="p">Medikor</h6>
-                </div>
-                <div className="ml-auto">
-                  <a href="/portfolio-grid">
-                    <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 items development">
-            <div className="item mb-50">
-              <div className="img">
-                <img src="/assets/imgs/portfolio/MODHU.png" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">
-                    Web Development
-                  </span>
-                  <h6 className="p">Modhu</h6>
-                </div>
-                <div className="ml-auto">
-                  <a href="/portfolio-grid">
-                    <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 items development">
-            <div className="item mb-50">
-              <div className="img">
-                <img src="/assets/imgs/portfolio/OCLE.png" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">
-                    Web Development
-                  </span>
-                  <h6 className="p">Ocle</h6>
-                </div>
-                <div className="ml-auto">
-                  <a href="/portfolio-grid">
-                    <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 items development">
-            <div className="item mb-50">
-              <div className="img">
-                <img src="/assets/imgs/portfolio/Red Business.png" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">
-                    Web Development
-                  </span>
-                  <h6 className="p">Red Business</h6>
-                </div>
-                <div className="ml-auto">
-                  <a href="/portfolio-grid">
-                    <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 items development">
-            <div className="item mb-50">
-              <div className="img">
-                <img src="/assets/imgs/portfolio/Sell Shop.png" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">
-                    Web Development
-                  </span>
-                  <h6 className="p">Sell Shop</h6>
-                </div>
-                <div className="ml-auto">
-                  <a href="/portfolio-grid">
-                    <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 items development">
-            <div className="item mb-50">
-              <div className="img">
-                <img src="/assets/imgs/portfolio/SOFTO.png" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">
-                    Web Development
-                  </span>
-                  <h6 className="p">Softo</h6>
-                </div>
-                <div className="ml-auto">
-                  <a href="/portfolio-grid">
-                    <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 items development">
-            <div className="item mb-50">
-              <div className="img">
-                <img src="/assets/imgs/portfolio/Vitour.png" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">
-                    Web Development
-                  </span>
-                  <h6 className="p">Vitour</h6>
-                </div>
-                <div className="ml-auto">
-                  <a href="/portfolio-grid">
-                    <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 items development">
-            <div className="item mb-50">
-              <div className="img">
-                <img src="/assets/imgs/portfolio/Web Tech.png" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">
-                    Web Development
-                  </span>
-                  <h6 className="p">Web Tech</h6>
-                </div>
-                <div className="ml-auto">
-                  <a href="/portfolio-grid">
-                    <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 items development">
-            <div className="item mb-50">
-              <div className="img">
-                <img src="/assets/imgs/portfolio/Wia Tech1.png" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">
-                    Web Development
-                  </span>
-                  <h6 className="p">Wia Tech</h6>
-                </div>
-                <div className="ml-auto">
-                  <a href="/portfolio-grid">
-                    <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 items design">
-            <div className="item mb-50">
-              <div className="img">
-                <img src="/assets/imgs/graphic/Card-Design.webp" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">Graphic Design</span>
-                  <h6 className="p">Card Design</h6>
-                </div>
-                <div className="ml-auto">
-                  <a href="/portfolio-grid">
-                    <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 items development">
-            <div className="item mb-50">
-              <div className="img">
-                <img src="/assets/imgs/graphic/Portfolio Design.webp" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">Graphic Design</span>
-                  <h6 className="p">Card Design</h6>
-                </div>
-                <div className="ml-auto">
-                  <a href="/portfolio-grid">
-                    <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 items design">
-            <div className="item mb-50">
-              <div className="img">
-                <img src="/assets/imgs/graphic/Logo Design1.webp" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">Graphic Design</span>
-                  <h6 className="p">Logo Design</h6>
-                </div>
-                <div className="ml-auto">
-                  <a href="/portfolio-grid">
-                    <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 items design">
-            <div className="item mb-50">
-              <div className="img">
-                <img src="/assets/imgs/graphic/Logo Design.webp" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">Graphic Design</span>
-                  <h6 className="p">Logo Design</h6>
-                </div>
-                <div className="ml-auto">
-                  <a href="/portfolio-grid">
-                    <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 items design">
-            <div className="item mb-50">
-              <div className="img">
-                <img src="/assets/imgs/graphic/img5.webp" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">Graphic Design</span>
-                  <h6 className="p">Card Design</h6>
-                </div>
-                <div className="ml-auto">
-                  <a href="/portfolio-grid">
-                    <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 items design">
-            <div className="item mb-50">
-              <div className="img">
-                <img src="/assets/imgs/graphic/img6.webp" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">Graphic Design</span>
-                  <h6 className="p">Card Design</h6>
-                </div>
-                <div className="ml-auto">
-                  <a href="/portfolio-grid">
-                    <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 items design">
-            <div className="item mb-50">
-              <div className="img">
-                <img src="/assets/imgs/graphic/img7.webp" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">Graphic Design</span>
-                  <h6 className="p">Card Design</h6>
-                </div>
-                <div className="ml-auto">
-                  <a href="/portfolio-grid">
-                    <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 items design">
-            <div className="item mb-50">
-              <div className="img">
-                <img src="/assets/imgs/graphic/img8.webp" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">Graphic Design</span>
-                  <h6 className="p">Logo Design</h6>
-                </div>
-                <div className="ml-auto">
-                  <a href="/portfolio-grid">
-                    <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 items design">
-            <div className="item mb-50">
-              <div className="img">
-                <img src="/assets/imgs/graphic/img9.webp" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">Graphic Design</span>
-                  <h6 className="p">Card Design</h6>
-                </div>
-                <div className="ml-auto">
-                  <a href="/portfolio-grid">
-                    <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 items marketing">
-            <div className="item mb-50">
-              <div className="img">
-                <img src="/assets/imgs/marketing/img1.png" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">Marketing</span>
-                  <h6 className="p">Modhu</h6>
-                </div>
-                <div className="ml-auto">
-                  <a href="/portfolio-grid">
-                    <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 items marketing">
-            <div className="item mb-50">
-              <div className="img">
-                <img src="/assets/imgs/marketing/img2.png" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">Marketing</span>
-                  <h6 className="p">The Verge</h6>
-                </div>
-                <div className="ml-auto">
-                  <a href="/portfolio-grid">
-                    <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 items marketing">
-            <div className="item mb-50">
-              <div className="img">
-                <img src="/assets/imgs/marketing/img3.png" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">Marketing</span>
-                  <h6 className="p">Ocle</h6>
-                </div>
-                <div className="ml-auto">
-                  <a href="/portfolio-grid">
-                    <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 items marketing">
-            <div className="item mb-50">
-              <div className="img">
-                <img src="/assets/imgs/marketing/img4.png" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">Marketing</span>
-                  <h6 className="p">Red Business</h6>
-                </div>
-                <div className="ml-auto">
-                  <a href="/portfolio-grid">
-                    <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 items marketing">
-            <div className="item mb-50">
-              <div className="img">
-                <img src="/assets/imgs/marketing/img5.png" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">Marketing</span>
-                  <h6 className="p">Sell Shop</h6>
-                </div>
-                <div className="ml-auto">
-                  <a href="/portfolio-grid">
-                    <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 items marketing">
-            <div className="item mb-50">
-              <div className="img">
-                <img src="/assets/imgs/marketing/img6.png" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">Marketing</span>
-                  <h6 className="p">Softo</h6>
-                </div>
-                <div className="ml-auto">
-                  <a href="/portfolio-grid">
-                    <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 items marketing">
-            <div className="item mb-50">
-              <div className="img">
-                <img src="/assets/imgs/marketing/img7.png" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">Marketing</span>
-                  <h6 className="p">Grain Grower</h6>
-                </div>
-                <div className="ml-auto">
-                  <a href="/portfolio-grid">
-                    <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 items marketing">
-            <div className="item mb-50">
-              <div className="img">
-                <img src="/assets/imgs/marketing/img8.png" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">Marketing</span>
-                  <h6 className="p">Bixos</h6>
-                </div>
-                <div className="ml-auto">
-                  <a href="/portfolio-grid">
-                    <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 items marketing">
-            <div className="item mb-50">
-              <div className="img">
-                <img src="/assets/imgs/marketing/img9.png" alt="" />
-              </div>
-              <div className="cont d-flex align-items-end mt-30">
-                <div>
-                  <span className="p-color mb-5 sub-title">Marketing</span>
-                  <h6 className="p">Auto Mov</h6>
-                </div>
-                <div className="ml-auto">
-                  <a href="/portfolio-grid">
-                    <span className="ti-arrow-top-right"></span>
-                  </a>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
-       
       </div>
-    </section>
+    </>
   );
-}
+};
 
 export default Portfolio;
