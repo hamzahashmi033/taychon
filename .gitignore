@@ -1,4 +1,9 @@
 node_modules
+
 .next
+
 .next/
+
 postcss.config.zip
+
+config.bat
